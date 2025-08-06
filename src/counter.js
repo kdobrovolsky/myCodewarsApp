@@ -18,7 +18,17 @@ export function setupCounter(element) {
     }
     // Разбор: с помощью регулярного выражение ищем заглавные буквы, далее с помощью $1 ставим проблем и для замены подстроки в строке используется метод replace
 
+    // Задача 3.
+    // Постройте функцию, которая возвращает массив целых чисел от n до 1, где n > 0.
 
-    console.log(solution('camelCase'))
+    const reverseSeq = (n) => {
+    const arr = []
+        for (let i = 1; i <= n; i++) {
+            arr.push(i)
+        }
+    return arr.reverse()
+    };
+
+    console.log(reverseSeq(5))
 
 }
