@@ -76,8 +76,13 @@ export function setupCounter(element) {
         return anchorIndex === -1 ? url : url.substring(0, anchorIndex);
     }
 
+    // Задача 7
+    // Завершите функцию, которая преобразует шестнадцатеричное число (заданное в виде строки) в десятичное число.
+
+    function hexToDec(hexString){
+        return parseInt(hexString,16)
+    }
 
 
-    console.log(removeUrlAnchor("www.codewars.com#about"))
 
 }
