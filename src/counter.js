@@ -93,8 +93,8 @@ export function setupCounter(element) {
 //     Примечание: Убедитесь, что вы возвращаете правильное сообщение с правильными пробелами и знаками препинания.
 
     function cookie(x) {
-        typeof x === 'string'? `Кто съел последнее печенье? Это был Zak` :`Кто съел последнее печенье? Это был Dog`
-        typeof x === 'number'? `Кто съел последнее печенье? Это былa Monika` :`Кто съел последнее печенье? Это был Dog`
+        typeof x === 'string' ? `Кто съел последнее печенье? Это был Zak` : `Кто съел последнее печенье? Это был Dog`
+        typeof x === 'number' ? `Кто съел последнее печенье? Это былa Monika` : `Кто съел последнее печенье? Это был Dog`
         if (typeof x === 'string') {
             return `Кто съел последнее печенье? Это был Zak`
         } else if (typeof x === 'number') {
@@ -114,9 +114,33 @@ export function setupCounter(element) {
 
 
     const order = (words) => {
-        const arrWords = words.split(' ').sort((a, b) => a.replace(/\D/g,'') - b.replace(/\D/g,'')).join(' ')
+        const arrWords = words.split(' ').sort((a, b) => a.replace(/\D/g, '') - b.replace(/\D/g, '')).join(' ')
         return arrWords
     }
+    // Задача 10
+    // Создайте функцию с двумя аргументами, которая будет возвращать массив из первых n значений, кратных x.
+    //     Предположите, что и заданное число, и количество подсчётов будут положительными числами больше 0.
+    // Верните результаты в виде массива или списка (в зависимости от языка).
 
-    console.log(order("is2 Thi1s T4est 3a"))
+    function countBy(x, n) {
+
+        const arr = []
+        for (let i = 1; i <= n; i++) {
+            arr.push(x * i);
+        }
+        return arr;
+    }
+
+    // Задача 11
+    // Напиши функцию с именем setAlarm / set_alarm / set-alarm / setalarm (в зависимости от языка программирования),
+    // которая принимает два параметра.
+    // Первый параметр, employed (работаешь), имеет значение true,
+    // когда ты работаешь, а второй параметр, vacation (отпуск), имеет значение true, когда ты в отпуске.
+    // Функция должна возвращать true, если ты работаешь (employed) и не в отпуске (не vacation)
+    // (потому что именно при этих обстоятельствах тебе нужно установить будильник).
+    // В противном случае она должна возвращать false. Примеры:
+
+   const setAlarm = (employed, vacation) => employed && !vacation ? true : false
+
+    console.log(setAlarm(false,false))
 }
