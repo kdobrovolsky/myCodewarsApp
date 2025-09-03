@@ -7,6 +7,7 @@ export function setupCounter(element) {
         const vowels = str.match(/[aeiou]/gi)
         return vowels ? vowels.length : 0
     }
+
     //Разбор: сначала мы регулярным выраженим ищем один символ из перечисленных, далее с помощью match проверяем, если есть совпадение,
     // то возвращаем найденный массив гластных. Если массив существует => возвращаем его длину, если null => 0
 
@@ -16,17 +17,18 @@ export function setupCounter(element) {
     function solution(string) {
         return string.replace(/([A-Z])/g, ' $1')
     }
+
     // Разбор: с помощью регулярного выражение ищем заглавные буквы, далее с помощью $1 ставим проблем и для замены подстроки в строке используется метод replace
 
     // Задача 3.
     // Постройте функцию, которая возвращает массив целых чисел от n до 1, где n > 0.
 
     const reverseSeq = (n) => {
-    const arr = []
+        const arr = []
         for (let i = 1; i <= n; i++) {
             arr.push(i)
         }
-    return arr.reverse()
+        return arr.reverse()
     };
 
     // Задача 4.
@@ -43,10 +45,10 @@ export function setupCounter(element) {
     //     Дополнительное задание (не проверяется в тестах):
     // Сможете ли вы сделать так, чтобы функция возвращала null для пустого массива [] и массива с одним элементом [x]?
 
-    function firstNonConsecutive (arr) {
-    if(arr.length < 2) return null
+    function firstNonConsecutive(arr) {
+        if (arr.length < 2) return null
         for (let i = 1; i < arr.length; i++) {
-            if(arr[i] !== arr[i-1] + 1) return arr[i]
+            if (arr[i] !== arr[i - 1] + 1) return arr[i]
         }
         return null
     }
@@ -79,10 +81,30 @@ export function setupCounter(element) {
     // Задача 7
     // Завершите функцию, которая преобразует шестнадцатеричное число (заданное в виде строки) в десятичное число.
 
-    function hexToDec(hexString){
-        return parseInt(hexString,16)
+    function hexToDec(hexString) {
+        return parseInt(hexString, 16)
     }
 
+    //Задача 8
+//     Для решения этой задачи вам необходимо создать программу, которая определяет, кто съел последнее печенье. Если входные данные — строка,
+//     то печенье съел «Зак». Если входные данные — число с плавающей точкой или целое число, то печенье съела «Моника». Если входные данные — что-то другое, то печенье съела «собака».
+//     Вывод: «Кто съел последнее печенье? Это был (имя)!»
+// Например: Ввод = "привет" --> Вывод = "Кто съел последнее печенье? Это был Зак!" (Вы возвращаете Зака, потому что входные данные — строка).
+//     Примечание: Убедитесь, что вы возвращаете правильное сообщение с правильными пробелами и знаками препинания.
+
+    function cookie(x){
+        if(typeof x === 'string'){
+          return `Кто съел последнее печенье? Это был Zak`
+        }else if(typeof x === 'number'){
+            return `Кто съел последнее печенье? Это былa Monika`
+        }
+        else {
+            return `Кто съел последнее печенье? Это был Dog`
+        }
 
 
+
+    }
+
+    console.log(cookie(3.2))
 }
