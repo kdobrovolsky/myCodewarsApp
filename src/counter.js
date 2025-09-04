@@ -140,7 +140,34 @@ export function setupCounter(element) {
     // (потому что именно при этих обстоятельствах тебе нужно установить будильник).
     // В противном случае она должна возвращать false. Примеры:
 
-   const setAlarm = (employed, vacation) => employed && !vacation ? true : false
+    const setAlarm = (employed, vacation) => employed && !vacation ? true : false
 
-    console.log(setAlarm(false,false))
+    // Задача 12
+    // Вам необходимо создать функцию с именем reverseIt.
+    //     Напишите функцию так, чтобы при передаче строки или числа в качестве данных она возвращала данные в обратном порядке. Если данные имеют другой тип, верните их как есть.
+    //     Примеры входных данных и последующих выходных данных:
+
+
+    function reverseIt(data) {
+        if (typeof data !== 'string' && typeof data !== 'number') {
+            return data;
+        }
+        const reversed = data.toString().split('').reverse().join('');
+        return typeof data === 'number' ? Number(reversed) : reversed;
+    }
+
+    // Задача 13
+    // Напишите функцию, которая складывает два вызова.
+    //     Все входные данные будут целыми числами.
+// 1
+    const add = (a) => {
+        return function (b) {
+            return a + b;
+        }
+    }
+    // 2
+    const add2 = a => b => a + b
+
+
+    console.log(add(6)(2))
 }
