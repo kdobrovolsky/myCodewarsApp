@@ -177,7 +177,7 @@ export function setupCounter(element) {
     //     ["Глаза", "Очки", "Монокли", "Телескопы"]
     // Все строки в массиве, переданном вашей функции, будут иметь разную длину, поэтому вам не придётся решать, как упорядочить несколько строк одинаковой длины
 
-    const sortByLength = (array) => array.sort((a, b) => a.length - b.length,0)
+    const sortByLength = (array) => array.sort((a, b) => a.length - b.length, 0)
 
 
     // Задача 15
@@ -187,15 +187,15 @@ export function setupCounter(element) {
     //     Входная строка всегда содержит хотя бы одно число.
     //     Строка-результат должна содержать два числа, разделённые одним пробелом, причём сначала идёт наибольшее число, затем — наименьшее.
 
-    function highAndLow(numbers){
-        if(!numbers) return
+    function highAndLow(numbers) {
+        if (!numbers) return
         const arrNum = numbers.split(' ').map(Number);
         const result = arrNum.reduce(
             (acc, num) => ({
                 min: Math.min(acc.min, num),
                 max: Math.max(acc.max, num)
             }),
-            { min: arrNum[0], max: arrNum[0] }
+            {min: arrNum[0], max: arrNum[0]}
         );
         return `${result.max} ${result.min}`;
     }
@@ -205,16 +205,51 @@ export function setupCounter(element) {
     //     Примечание: анаграммы нечувствительны к регистру.
     //     Допиши функцию так, чтобы она возвращала true, если два переданных аргумента являются анаграммами друг друга, и false — в противном случае.
     // Variant 1
-    const isAnagram =(test, original) => {
-        if(test.length !== original.length) return false;
+    const isAnagram = (test, original) => {
+        if (test.length !== original.length) return false;
         const sortedTest = test.toLowerCase().split('').sort().join('');
         const sortedOriginal = original.toLowerCase().split('').sort().join('')
         return sortedTest === sortedOriginal;
     };
     // Variant 2
-    const isAnagram2 =(test, original) => {
-       return  test.toLowerCase().split('').sort().join('') === original.toLowerCase().split('').sort().join('')
+    const isAnagram2 = (test, original) => {
+        return test.toLowerCase().split('').sort().join('') === original.toLowerCase().split('').sort().join('')
     }
 
-    console.log(isAnagram2("foefet","toffee"))
+    //Задача 17
+    //Эта задача (ката) заключается в том, чтобы умножить заданное число на восемь, если оно чётное, и на девять — если нечётное.
+    const  simpleMultiplication = (number)  => number % 2 === 0 ? number * 8 : number * 9
+
+
+    //Задача 18
+    // Реализуйте функцию, которая принимает три целых числа: a, b, c. Функция должна возвращать true, если можно построить треугольник с такими сторонами, и false — в любом другом случае.
+    // (В данной задаче считаются допустимыми только треугольники с площадью больше нуля.)
+
+
+    // //Задача 19
+    // Создайте программу, которая фильтрует список строк и возвращает список только с именами ваших друзей.
+    // Если в имени ровно 4 буквы, можете быть уверены, что это ваш друг! В противном случае можете быть уверены, что это не так...
+    // Входные данные: ["Ryan", "Kieran", "Jason", "Yous"]
+    // Выходные данные: ["Ryan", "Yous"]
+    // Входные данные: ["Peter", "Stephen", "Joe"]
+    // Выходные данные: []
+    // Входные строки будут содержать только буквы.
+    // Примечание: сохраните исходный порядок имен в выходных данных.
+
+    const friend = (friends) =>friends.filter(name => name.length === 4)
+
+
+    // Задача 20
+    // Создайте функцию, которая возвращает сумму двух наименьших положительных чисел, given an array of minimum 4 positive integers. No floats or non-positive integers will be passed.
+    // Для примера, когда передается массив [19, 5, 42, 2, 77], вывод должен быть 7.
+    // [10, 343445353, 3453445, 3453545353453] должен вернуть 3453455.
+
+    function sumTwoSmallestNumbers(numbers) {
+        numbers.sort((a, b) => a - b)
+        return numbers[0] + numbers[1]
+    }
+
+    console.log(sumTwoSmallestNumbers([19, 5, 42, 2, 77]))
 }
+
+
