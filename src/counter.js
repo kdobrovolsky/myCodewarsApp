@@ -342,6 +342,8 @@ export function setupCounter(element) {
     const reverseWords = (str) => str.split('').reverse().join('').split(' ').reverse().join(' ');
 
 
+
+
    console.log(reverseWords('Это пример!'));
 }
 
