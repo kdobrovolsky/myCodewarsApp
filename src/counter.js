@@ -218,7 +218,7 @@ export function setupCounter(element) {
 
     //Задача 17
     //Эта задача (ката) заключается в том, чтобы умножить заданное число на восемь, если оно чётное, и на девять — если нечётное.
-    const  simpleMultiplication = (number)  => number % 2 === 0 ? number * 8 : number * 9
+    const simpleMultiplication = (number) => number % 2 === 0 ? number * 8 : number * 9
 
 
     //Задача 18
@@ -236,7 +236,7 @@ export function setupCounter(element) {
     // Входные строки будут содержать только буквы.
     // Примечание: сохраните исходный порядок имен в выходных данных.
 
-    const friend = (friends) =>friends.filter(name => name.length === 4)
+    const friend = (friends) => friends.filter(name => name.length === 4)
 
 
     // Задача 20
@@ -260,7 +260,7 @@ export function setupCounter(element) {
     // "A" --> "A"
 
     function getMiddle(s) {
-     let middleIndex = Math.floor(s.length/2)
+        let middleIndex = Math.floor(s.length / 2)
         if (s.length % 2 === 0) {
             // Если четно, возвращаем два символа: тот, что ДО middleIndex, и тот, что НА middleIndex
             return s[middleIndex - 1] + s[middleIndex];
@@ -277,8 +277,8 @@ export function setupCounter(element) {
     // Для массива [34, -345, -1, 100] ваше решение должно вернуть -345
     // Можно предположить для данной задачи, что предоставленный массив не будет пустым.
 
-    const findSmallestInt = (arr) =>  {
-         arr.sort((a, b) => a - b)
+    const findSmallestInt = (arr) => {
+        arr.sort((a, b) => a - b)
         return arr[0]
     }
 
@@ -290,7 +290,7 @@ export function setupCounter(element) {
     // "12345" --> false
     // "a234" --> false
 
-    function validatePIN (pin) {
+    function validatePIN(pin) {
         return /^(\d{4}|\d{6})$/.test(pin)
     }
 
@@ -328,7 +328,7 @@ export function setupCounter(element) {
     // Входные данные: "abc", "d"
     // Результат: false
 
-    function solution(str, ending){
+    function solution(str, ending) {
         return str.endsWith(ending);
     }
 
@@ -341,10 +341,27 @@ export function setupCounter(element) {
 
     const reverseWords = (str) => str.split('').reverse().join('').split(' ').reverse().join(' ');
 
+    //Задача 27
+    // Даны два целых числа a и b, которые могут быть положительными или отрицательными.
+    // Найдите сумму всех целых чисел между ними и включая их, затем верните её. Если два числа равны, верните a или b.
+    // Примечание: числа a и b не упорядочены!
+    // Примеры (a, b) --> результат (пояснение)
+    // (1, 0) --> 1 (1 + 0 = 1)
+    // (1, 2) --> 3 (1 + 2 = 3)
+    // (0, 1) --> 1 (0 + 1 = 1)
+    // (1, 1) --> 1 (1, так как оба числа одинаковы)
+    // (-1, 0) --> -1 (-1 + 0 = -1)
+    // (-1, 2) --> 2 (-1 + 0 + 1 + 2 = 2)
+    // Ваша функция должна возвращать только число, а не пояснение о том, как вы его получили.
 
+    function getSum(a, b) {
+        const min = Math.min(a, b);
+        const max = Math.max(a, b);
+        return min === max ? min : Array.from({length: max - min + 1}, (_, i) => min + i)
+            .reduce((sum, num) => sum + num, 0);
+    }
 
-
-   console.log(reverseWords('Это пример!'));
+    console.log(getSum(2, 5));
 }
 
 
