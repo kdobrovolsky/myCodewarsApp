@@ -361,7 +361,153 @@ export function setupCounter(element) {
             .reduce((sum, num) => sum + num, 0);
     }
 
-    console.log(getSum(2, 5));
+    // console.log(getSum(2, 5));
+
+
+
+    // Глубокое копирование. ЗАДАЧА 1
+    const library = {
+        name: "City Library",
+        books: [
+            { id: 1, title: "JavaScript Guide", author: { name: "John Doe", country: "USA" } },
+            { id: 2, title: "React Basics", author: { name: "Jane Smith", country: "UK" } }
+        ]
+    };
+
+// Измените страну автора первой книги на "Canada"
+    function updateAuthorCountry(library, bookId, newCountry) {
+       return {
+           ...library,
+           books: library.books.map(book => {
+               if(book.id === bookId) {
+                   return {
+                       ...book,
+                       author: {
+                           ...book.author,
+                           country: newCountry
+                       }
+                   }
+               }
+           })
+       }
+    }
+
+// Проверка
+//     const updatedLibrary = updateAuthorCountry(library, 1, "Canada");
+//     console.log(library.books[0].author.country); // "USA" (оригинал не изменился)
+//     console.log(updatedLibrary.books[0].author.country); // "Canada"
+
+
+
+
+    // Глубокое копирование. ЗАДАЧА 2
+    const bookstore = {
+        name: "Book World",
+        books: [
+            { id: 101, title: "JavaScript Advanced", price: 29.99, details: { category: "Programming", rating: 4.5 } },
+            { id: 102, title: "Python Basics", price: 24.99, details: { category: "Programming", rating: 4.2 } }
+        ]
+    };
+
+// Задача: Напишите функцию updateBookPrice, которая возвращает новый объект bookstore
+    function updateBookPrice(bookstore, bookId, newPrice) {
+        return {
+            ...bookstore,
+            books: bookstore.books.map(book => {
+                if (book.id === bookId) {
+                    return {
+                        ...book,
+                        price: newPrice
+                    };
+                }
+                return book;
+            })
+        };
+    }
+
+// Проверка
+//     const updatedBookstore = updateBookPrice(bookstore, 101, 34.99);
+//     console.log(bookstore.books[0].price); // 29.99 (оригинал не изменился)
+//     console.log(updatedBookstore.books[0].price); // 34.99
+
+
+
+
+    // Глубокое копирование. ЗАДАЧА 3
+    const company = {
+        name: "TechSolutions",
+        departments: {
+            development: {
+                manager: { name: "Alice", experience: 5 },
+                employees: [
+                    { name: "Bob", skills: ["JS", "React"] },
+                    { name: "Charlie", skills: ["Python", "Django"] }
+                ]
+            },
+            marketing: {
+                manager: { name: "David", experience: 3 },
+                employees: [
+                    { name: "Eva", skills: ["SEO", "Content"] }
+                ]
+            }
+        }
+    };
+
+// Добавьте навык "TypeScript" сотруднику Bob
+    function addSkillToEmployee(company, departmentName, employeeName, newSkill) {
+        return {...company,
+            departments:{
+        ...company.departments,
+                development: {
+            ...company.departments.development,
+                    employees:{
+                ...company.departments.development.employees.map(em => em.name === employeeName? {...em, skills: [...em.skills,newSkill]}: em),
+                    }
+                }
+            }
+        }
+    }
+
+// Проверка
+    const updatedCompany = addSkillToEmployee(company, "development", "Bob", "TypeScript");
+    console.log(company.departments.development.employees[0].skills); // ["JS", "React"]
+    console.log(updatedCompany.departments.development.employees[0].skills); // ["JS", "React", "TypeScript"]
+
+    //Глубокое копирование ЗАДАЧА 4
+
+    const school = {
+        name: "Sunshine School",
+        classes: {
+            grade1: {
+                teacher: "Mrs. Smith",
+                students: 25
+            },
+            grade2: {
+                teacher: "Mr. Johnson",
+                students: 28
+            }
+        }
+    };
+
+// Измените количество студентов в grade1 на 26
+    function updateStudentsCount(school, grade, newCount) {
+        return {
+            ...school,
+            classes: {
+                ...school.classes,
+                [grade]: {
+                    ...school.classes[grade],
+                    students: newCount
+                }
+            }
+        }
+    }
+
+// Проверка
+    const updatedSchool = updateStudentsCount(school, "grade1", 26);
+    console.log(school.classes.grade1.students); // 25
+    console.log(updatedSchool.classes.grade1.students); // 26
+
 }
 
 
