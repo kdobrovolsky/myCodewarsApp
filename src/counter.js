@@ -364,32 +364,31 @@ export function setupCounter(element) {
     // console.log(getSum(2, 5));
 
 
-
     // Глубокое копирование. ЗАДАЧА 1
     const library = {
         name: "City Library",
         books: [
-            { id: 1, title: "JavaScript Guide", author: { name: "John Doe", country: "USA" } },
-            { id: 2, title: "React Basics", author: { name: "Jane Smith", country: "UK" } }
+            {id: 1, title: "JavaScript Guide", author: {name: "John Doe", country: "USA"}},
+            {id: 2, title: "React Basics", author: {name: "Jane Smith", country: "UK"}}
         ]
     };
 
 // Измените страну автора первой книги на "Canada"
     function updateAuthorCountry(library, bookId, newCountry) {
-       return {
-           ...library,
-           books: library.books.map(book => {
-               if(book.id === bookId) {
-                   return {
-                       ...book,
-                       author: {
-                           ...book.author,
-                           country: newCountry
-                       }
-                   }
-               }
-           })
-       }
+        return {
+            ...library,
+            books: library.books.map(book => {
+                if (book.id === bookId) {
+                    return {
+                        ...book,
+                        author: {
+                            ...book.author,
+                            country: newCountry
+                        }
+                    }
+                }
+            })
+        }
     }
 
 // Проверка
@@ -398,14 +397,12 @@ export function setupCounter(element) {
 //     console.log(updatedLibrary.books[0].author.country); // "Canada"
 
 
-
-
     // Глубокое копирование. ЗАДАЧА 2
     const bookstore = {
         name: "Book World",
         books: [
-            { id: 101, title: "JavaScript Advanced", price: 29.99, details: { category: "Programming", rating: 4.5 } },
-            { id: 102, title: "Python Basics", price: 24.99, details: { category: "Programming", rating: 4.2 } }
+            {id: 101, title: "JavaScript Advanced", price: 29.99, details: {category: "Programming", rating: 4.5}},
+            {id: 102, title: "Python Basics", price: 24.99, details: {category: "Programming", rating: 4.2}}
         ]
     };
 
@@ -431,23 +428,21 @@ export function setupCounter(element) {
 //     console.log(updatedBookstore.books[0].price); // 34.99
 
 
-
-
     // Глубокое копирование. ЗАДАЧА 3
     const company = {
         name: "TechSolutions",
         departments: {
             development: {
-                manager: { name: "Alice", experience: 5 },
+                manager: {name: "Alice", experience: 5},
                 employees: [
-                    { name: "Bob", skills: ["JS", "React"] },
-                    { name: "Charlie", skills: ["Python", "Django"] }
+                    {name: "Bob", skills: ["JS", "React"]},
+                    {name: "Charlie", skills: ["Python", "Django"]}
                 ]
             },
             marketing: {
-                manager: { name: "David", experience: 3 },
+                manager: {name: "David", experience: 3},
                 employees: [
-                    { name: "Eva", skills: ["SEO", "Content"] }
+                    {name: "Eva", skills: ["SEO", "Content"]}
                 ]
             }
         }
@@ -455,13 +450,17 @@ export function setupCounter(element) {
 
 // Добавьте навык "TypeScript" сотруднику Bob
     function addSkillToEmployee(company, departmentName, employeeName, newSkill) {
-        return {...company,
-            departments:{
-        ...company.departments,
+        return {
+            ...company,
+            departments: {
+                ...company.departments,
                 development: {
-            ...company.departments.development,
-                    employees:{
-                ...company.departments.development.employees.map(em => em.name === employeeName? {...em, skills: [...em.skills,newSkill]}: em),
+                    ...company.departments.development,
+                    employees: {
+                        ...company.departments.development.employees.map(em => em.name === employeeName ? {
+                            ...em,
+                            skills: [...em.skills, newSkill]
+                        } : em),
                     }
                 }
             }
@@ -509,7 +508,6 @@ export function setupCounter(element) {
     // console.log(updatedSchool.classes.grade1.students); // 26
 
 
-
     //Глубокое копирование ЗАДАЧА 5
 
 
@@ -521,8 +519,8 @@ export function setupCounter(element) {
                 title: "First Post",
                 tags: ["tech", "js"],
                 comments: [
-                    { id: 101, user: "Alice", text: "Great post!" },
-                    { id: 102, user: "Bob", text: "Thanks!" }
+                    {id: 101, user: "Alice", text: "Great post!"},
+                    {id: 102, user: "Bob", text: "Thanks!"}
                 ]
             },
             {
@@ -530,7 +528,7 @@ export function setupCounter(element) {
                 title: "Second Post",
                 tags: ["react"],
                 comments: [
-                    { id: 201, user: "Charlie", text: "Nice!" }
+                    {id: 201, user: "Charlie", text: "Nice!"}
                 ]
             }
         ]
@@ -541,12 +539,12 @@ export function setupCounter(element) {
         return {
             ...blog,
             posts:
-            blog.posts.map(p => p.id === postId ? {...p, comments: [...p.comments, newComment] } : p)
+                blog.posts.map(p => p.id === postId ? {...p, comments: [...p.comments, newComment]} : p)
         }
     }
 
 // Проверка
-    const newComment = { id: 103, user: "Diana", text: "Very helpful!" };
+    const newComment = {id: 103, user: "Diana", text: "Very helpful!"};
     const updatedBlog = addComment(blog, 1, newComment);
     //
     // console.log("Оригинал:", blog.posts[0].comments.length); // 2
@@ -554,48 +552,55 @@ export function setupCounter(element) {
     // console.log("Последний комментарий:", updatedBlog.posts[0].comments[2].user); // "Diana"
 
 
-
     //Глубокое копирование ЗАДАЧА 6 (reducer)
 
 
     const initialState = {
         products: [
-            { id: 1, name: "Apple", price: 1.5, inStock: true },
-            { id: 2, name: "Banana", price: 0.8, inStock: true },
-            { id: 3, name: "Orange", price: 2.0, inStock: false }
+            {id: 1, name: "Apple", price: 1.5, inStock: true},
+            {id: 2, name: "Banana", price: 0.8, inStock: true},
+            {id: 3, name: "Orange", price: 2.0, inStock: false}
         ],
         cart: [
-            { productId: 1, quantity: 3 }
+            {productId: 1, quantity: 3}
         ]
     };
 
     function shopReducer(state = initialState, action) {
         switch (action.type) {
             case 'ADD_TO_CART':
-           return {
-               ...state,
-               cart: [...state.cart, action.payload]
-           }
-
-            case 'REMOVE_FROM_CART':
-            return {...state,
-            cart: state.cart.filter(cart => cart.productId !== action.payload)
-            }
-
-            case 'UPDATE_PRICE':
-            // payload: { productId, newPrice }
-            // Изменить цену товара
                 return {
                     ...state,
-                    products: state.products.map(p => p.id === action.payload.productId ? {...p, price: action.payload.newPrice }: p)
+                    cart: [...state.cart, action.payload]
+                }
+
+            case 'REMOVE_FROM_CART':
+                return {
+                    ...state,
+                    cart: state.cart.filter(cart => cart.productId !== action.payload)
+                }
+
+            case 'UPDATE_PRICE':
+                // payload: { productId, newPrice }
+                // Изменить цену товара
+                return {
+                    ...state,
+                    products: state.products.map(p => p.id === action.payload.productId ? {
+                        ...p,
+                        price: action.payload.newPrice
+                    } : p)
                 }
 
             case 'TOGGLE_STOCK':
-            // payload: productId
-            // Переключить наличие товара (true/false)
-            return {...state,
-            products: state.products.map(t=> t.id === action.payload.productId? {...t,inStock: !t.inStock }:t)
-            }
+                // payload: productId
+                // Переключить наличие товара (true/false)
+                return {
+                    ...state,
+                    products: state.products.map(t => t.id === action.payload.productId ? {
+                        ...t,
+                        inStock: !t.inStock
+                    } : t)
+                }
             default:
                 return state;
         }
@@ -606,27 +611,27 @@ export function setupCounter(element) {
 
     state = shopReducer(state, {
         type: 'ADD_TO_CART',
-        payload: { productId: 2, quantity: 2 }
+        payload: {productId: 2, quantity: 2}
     });
-    console.log(state.cart.length); // Должно быть 2
+    // console.log(state.cart.length); // Должно быть 2
 
     state = shopReducer(state, {
         type: 'UPDATE_PRICE',
-        payload: { productId: 1, newPrice: 1.2 }
+        payload: {productId: 1, newPrice: 1.2}
     });
-    console.log(state.products[0].price); // Должно быть 1.2
+    // console.log(state.products[0].price); // Должно быть 1.2
 
     //Глубокое копирование ЗАДАЧА 7 (reducer)
 
 
     const libraryState = {
         books: [
-            { id: 1, title: "JavaScript Guide", author: "John Doe", isAvailable: true, rating: 4.5 },
-            { id: 2, title: "React Basics", author: "Jane Smith", isAvailable: false, rating: 4.2 },
-            { id: 3, title: "CSS Mastery", author: "Bob Johnson", isAvailable: true, rating: 4.7 }
+            {id: 1, title: "JavaScript Guide", author: "John Doe", isAvailable: true, rating: 4.5},
+            {id: 2, title: "React Basics", author: "Jane Smith", isAvailable: false, rating: 4.2},
+            {id: 3, title: "CSS Mastery", author: "Bob Johnson", isAvailable: true, rating: 4.7}
         ],
         borrowed: [
-            { bookId: 2, userId: "user123", dueDate: "2024-02-01" }
+            {bookId: 2, userId: "user123", dueDate: "2024-02-01"}
         ],
         filters: {
             genre: "all",
@@ -637,34 +642,38 @@ export function setupCounter(element) {
     function libraryReducer(state, action) {
         switch (action.type) {
             case 'BORROW_BOOK':
-            // payload: { bookId, userId, dueDate }
-            // Книга становится недоступной и добавляется в borrowed
-                return {...state,
-                books: state.books.map(b=> b.id === action.payload.bookId ? {...b, isAvailable: false}:b),
-                borrowed: [...state.borrowed, action.payload]
+                // payload: { bookId, userId, dueDate }
+                // Книга становится недоступной и добавляется в borrowed
+                return {
+                    ...state,
+                    books: state.books.map(b => b.id === action.payload.bookId ? {...b, isAvailable: false} : b),
+                    borrowed: [...state.borrowed, action.payload]
                 }
 
             case 'RETURN_BOOK':
-            // payload: bookId
-            // Книга снова доступна и удаляется из borrowed
-                return {...state,
-                    books: state.books.map(b=> b.id === action.payload ? {...b, isAvailable: true}:b),
-                    borrowed: state.borrowed.filter(b=> b.bookId !== action.payload),
+                // payload: bookId
+                // Книга снова доступна и удаляется из borrowed
+                return {
+                    ...state,
+                    books: state.books.map(b => b.id === action.payload ? {...b, isAvailable: true} : b),
+                    borrowed: state.borrowed.filter(b => b.bookId !== action.payload),
                 }
             case 'UPDATE_RATING':
                 return {
                     ...state,
                     books: state.books.map(book =>
                         book.id === action.payload.bookId
-                            ? { ...book, rating: action.payload.newRating }
+                            ? {...book, rating: action.payload.newRating}
                             : book
                     )
                 };
             case 'ADD_BOOK':
-            // payload: { id, title, author, isAvailable, rating }
-            // Добавить новую книгу
-            return {...state,
-            books: [...state.books, action.payload]}
+                // payload: { id, title, author, isAvailable, rating }
+                // Добавить новую книгу
+                return {
+                    ...state,
+                    books: [...state.books, action.payload]
+                }
             case 'SET_FILTER':
                 return {
                     ...state,
@@ -677,6 +686,83 @@ export function setupCounter(element) {
                 return state;
         }
     }
+
+    //Задача 28
+    // Создайте функцию, которая принимает входную строку и возвращает строку, в которой все слова в верхнем регистре идут впереди, а все слова в нижнем регистре — в конце.
+    //     Порядок слов в верхнем и нижнем регистре должен соответствовать порядку их появления во входной строке.
+    //     Если слово начинается с цифры или специального символа, пропустите это слово и не включайте его в результат.
+    //     Входная строка не будет пустой.
+    //     Для входной строки: "hey You, Sort me Already!" функция должна вернуть: "You, Sort Already! hey me"
+
+    function capitalsFirst(str) {
+        const arrStr = str.split(' ');
+        const upperCaseArray = []
+        const lowerCaseArray = []
+
+        for (let i = 0; i < arrStr.length; i++) {
+            const word = arrStr[i]
+            if (!word) continue;
+            const firstChar = word[0]
+            const isAlpha = firstChar.toUpperCase() !== firstChar.toLowerCase();
+
+            if (!isAlpha) continue;
+            firstChar === firstChar.toUpperCase() ? upperCaseArray.push(word) : lowerCaseArray.push(word);
+        }
+
+        if (upperCaseArray.length === 0) return lowerCaseArray.join(' ');
+        if (lowerCaseArray.length === 0) return upperCaseArray.join(' ');
+
+        return upperCaseArray.join(' ') + ' ' + lowerCaseArray.join(' ');
+    }
+
+    //Доп задачи
+
+    // Найти и вернуть все слова, которые начинаются с заглавной буквы
+    function findCapitalizedWords(str) {
+        const words = str.split(' ');
+        const arrFilter = words.filter(word => word &&
+            word[0] === word[0].toUpperCase() &&
+            word[0] !== word[0].toLowerCase())
+        return arrFilter.join(' ')
+    }
+
+
+    // Задача 29
+    // Создайте функцию с именем divisors/Divisors, которая принимает целое число n > 1 и возвращает массив со всеми делителями этого числа (кроме 1 и самого числа),
+    // от наименьшего к наибольшему. Если число простое, верните строку '(integer) is prime'
+    // (null в C#, пустую таблицу в COBOL) (используйте Either String a в Haskell и Result<Vec<u32>, String> в Rust).
+
+    function divisors(integer) {
+        const arrNum = []
+        for (let i = 2; i < integer; i++) {
+            if (integer % i === 0) {
+                arrNum.push(i);
+            }
+        }
+        return arrNum.length !== 0 ? arrNum : `${integer} is prime`;
+    }
+
+    // Задача 30
+    // В математике факториал неотрицательного целого числа n, обозначаемый n!, представляет собой произведение всех положительных целых чисел, меньших или равных n. Например: 5! = 5 * 4 * 3 * 2 * 1 = 120. По соглашению значение 0! равно 1.
+    // Напишите функцию для вычисления факториала для заданного входного значения. Если входное значение меньше 0 или больше 12, выбросьте исключение типа ArgumentOutOfRangeException (C#)
+    // или IllegalArgumentException (Java) или RangeException (PHP) или throw a RangeError (JavaScript) или ValueError (Python) или return -1 (C).
+    //     Более подробную информацию о факториале можно найти здесь.
+
+    function factorial(n) {
+    if(n > 12 || n < 0 ) {
+        throw new RangeError("Number must be between 0 and 12");
+    }
+
+        let result = 1
+        for (let i = 1; i <= n; i++) {
+            result *= i
+        }
+     return result
+    }
+
+    console.log(factorial(5))
+
+
 }
 
 
