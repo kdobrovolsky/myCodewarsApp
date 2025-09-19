@@ -878,8 +878,60 @@ export function setupCounter(element) {
         return string.length % 2 === 1? !value: !!value
     }
 
+  //Задача 35
+  //   Вам будет дан массив и предельное значение. Вы должны проверить,
+  //       что все значения в массиве меньше или равны предельному значению.
+  //       Если это так, верните true. В противном случае верните false.
+  //       Можно предположить, что все значения в массиве являются числами.
 
-    console.log(negationValue2('!!!', []))
+    function smallEnough(a, limit){
+        const numA = a.sort((a, b) => b-a)
+        console.log(numA[0])
+        if(numA[0] <= limit){
+            return true
+        }else {
+            return false
+        }
+    }
+
+    function smallEnough2(a, limit){
+    return a.every(value => value <= limit)
+    }
+
+    //Задача 36
+    // Создайте выполненный Promise (промис) в JavaScript, который будет возвращать 'Hello World!'.
+
+const promise = new Promise((resolve, reject) => {
+    resolve('Hello world')
+})
+
+    //Задача 37
+    // Вам дан массив целых чисел нечётной длины, в котором все числа одинаковые, кроме одного единственного числа.
+    //Завершите метод, который принимает такой массив и возвращает это единственное отличающееся число.
+    //Входной массив всегда будет корректным! (нечётная длина >= 3)
+
+    function stray(numbers) {
+       if(numbers[0] !== numbers[1] && numbers[1] !== numbers[2]){
+           return numbers[0]
+       }
+       for(let i = 1; i < numbers.length; i++){
+           if(numbers[i] !== numbers[0]){
+               return numbers[i]
+           }
+       }
+    }
+
+    //Задача 38
+    // Вы спрашиваете маленькую девочку: "Сколько тебе лет?" Она всегда отвечает: "x years old", где x - случайное число от 0 до 9.
+    // Напишите программу, которая возвращает возраст девочки (0-9) в виде целого числа.
+    // Предполагается, что входная строка всегда является допустимой строкой. Например, входная строка может быть "1 year old" или "5 years old".
+    // Первый символ в строке всегда является цифрой.
+
+    function getAge(inputString){
+    return Number(inputString[0])
+    }
+
+    console.log(getAge('1 year old'))
 }
 
 
