@@ -921,10 +921,6 @@ const promise = new Promise((resolve, reject) => {
        }
     }
 
-
-
-
-
     //Задача 38
     // Вы спрашиваете маленькую девочку: "Сколько тебе лет?" Она всегда отвечает: "x years old", где x - случайное число от 0 до 9.
     // Напишите программу, которая возвращает возраст девочки (0-9) в виде целого числа.
@@ -935,7 +931,7 @@ const promise = new Promise((resolve, reject) => {
     return Number(inputString[0])
     }
 
-    console.log(getAge('1 year old'))
+
 }
 
 
