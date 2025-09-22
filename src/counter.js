@@ -931,6 +931,7 @@ const promise = new Promise((resolve, reject) => {
     return Number(inputString[0])
     }
 
+<<<<<<< HEAD
     //Задача 39
     // Создайте функцию, которая принимает массив имен и возвращает массив, в котором каждое имя записано с заглавной первой буквы,
     // а остальные буквы — строчными.
@@ -947,6 +948,9 @@ const promise = new Promise((resolve, reject) => {
     }
 
     console.log(capMe(["jo", "NELson", "jurie"]))
+=======
+
+>>>>>>> 931850c300002c76b5d73106a8a6aa36c16f3373
 }
 
 
