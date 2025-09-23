@@ -931,7 +931,7 @@ const promise = new Promise((resolve, reject) => {
     return Number(inputString[0])
     }
 
-<<<<<<< HEAD
+
     //Задача 39
     // Создайте функцию, которая принимает массив имен и возвращает массив, в котором каждое имя записано с заглавной первой буквы,
     // а остальные буквы — строчными.
@@ -943,14 +943,37 @@ const promise = new Promise((resolve, reject) => {
     return names.map((name) => {
         return name.charAt(0).toUpperCase() + name.slice(1).toLowerCase()
     })
-
-
     }
 
-    console.log(capMe(["jo", "NELson", "jurie"]))
-=======
+    //Задача 40
+    // Вам дан объект в виде словаря (реализация может отличаться в зависимости от языка),
+    // в котором ключи — это названия языков, а значения — ваши соответствующие результаты тестов.
+    // Верните список языков, в которых ваш балл составляет не менее 60, в порядке убывания баллов.
+    //     Примечание: баллы всегда будут уникальными (дубликатов значений не будет).
+    // Примеры
+    // Входной объект с парами ключ-значение:
+    // "Java" -> 10, "Ruby" -> 80, "Python" -> 65
+    // Вывод:
+    //     [ "Ruby", "Python" ]
+    // Входной объект с парами ключ-значение:
+    // "Hindi" -> 60, "Greek" -> 71, "Dutch" -> 93
+    // Вывод:
+    //     [ "Dutch", "Greek", "Hindi" ]
+    //
+    // Входной объект с парами ключ-значение:
+    // "C++" -> 50, "ASM" -> 10, "Haskell" -> 20
+    // Вывод:
+    //     [ ]
 
->>>>>>> 931850c300002c76b5d73106a8a6aa36c16f3373
+    function myLanguages(results) {
+        return Object.entries(results)
+            .filter(([language, score]) => score >= 60)
+            .sort((a, b) => b[1] - a[1])
+            .map(([language, score]) => language);
+    }
+
+    console.log(myLanguages({ "Java": 10, "Ruby": 80, "Python": 65 }));
+
 }
 
 
