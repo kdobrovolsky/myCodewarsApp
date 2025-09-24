@@ -965,14 +965,17 @@ const promise = new Promise((resolve, reject) => {
     // Вывод:
     //     [ ]
 
-    function myLanguages(results) {
-        return Object.entries(results)
-            .filter(([language, score]) => score >= 60)
-            .sort((a, b) => b[1] - a[1])
-            .map(([language, score]) => language);
-    }
+    // function myLanguages(results) {
+    //     return Object.entries(results)
+    //         .filter(([language, score]) => score >= 60)
+    //         .sort((a, b) => b[1] - a[1])
+    //         .map(([language, score]) => language);
+    // }
+    //
+    // console.log(myLanguages({ "Java": 10, "Ruby": 80, "Python": 65 }));
 
-    console.log(myLanguages({ "Java": 10, "Ruby": 80, "Python": 65 }));
+
+
 
 }
 
