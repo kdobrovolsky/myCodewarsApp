@@ -975,6 +975,7 @@ const promise = new Promise((resolve, reject) => {
     // console.log(myLanguages({ "Java": 10, "Ruby": 80, "Python": 65 }));
 
 
+<<<<<<< HEAD
     //Задача 41
     // В этом ката вы создадите функцию, которая принимает список неотрицательных целых чисел и строк и возвращает новый список,
     //     из которого отфильтрованы строки.
@@ -1010,6 +1011,9 @@ const promise = new Promise((resolve, reject) => {
 
 
     console.log(sumDigits(-32))
+=======
+
+>>>>>>> b904e2e9c599edd21de4cd528c1a780e9e71a06c
 
 }
 
