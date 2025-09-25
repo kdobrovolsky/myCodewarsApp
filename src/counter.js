@@ -965,14 +965,51 @@ const promise = new Promise((resolve, reject) => {
     // Вывод:
     //     [ ]
 
-    function myLanguages(results) {
-        return Object.entries(results)
-            .filter(([language, score]) => score >= 60)
-            .sort((a, b) => b[1] - a[1])
-            .map(([language, score]) => language);
+    // function myLanguages(results) {
+    //     return Object.entries(results)
+    //         .filter(([language, score]) => score >= 60)
+    //         .sort((a, b) => b[1] - a[1])
+    //         .map(([language, score]) => language);
+    // }
+    //
+    // console.log(myLanguages({ "Java": 10, "Ruby": 80, "Python": 65 }));
+
+
+    //Задача 41
+    // В этом ката вы создадите функцию, которая принимает список неотрицательных целых чисел и строк и возвращает новый список,
+    //     из которого отфильтрованы строки.
+    //     Пример
+    // text
+    // filter_list([1,2,'a','b']) == [1,2]
+    // filter_list([1,'a','b',0,15]) == [1,0,15]
+    // filter_list([1,2,'aasf','1','123',123]) == [1,2,123]
+
+    function filter_list(l) {
+    return l.filter((x) => typeof x !== 'string')
     }
 
-    console.log(myLanguages({ "Java": 10, "Ruby": 80, "Python": 65 }));
+    //Задача 42
+    // Напишите функцию, которая принимает число в качестве входного параметра и возвращает сумму абсолютных значений
+    // каждой десятичной цифры этого числа.
+    //     Например: (Входные данные --> Результат)
+    // text
+    // 10 --> 1
+    // 99 --> 18
+    // -32 --> 5
+
+    function sumDigits(number) {
+
+        const arrNumber = Math.abs(number).toString().split('');
+        let sum = 0;
+        for (let i = 0; i < arrNumber.length; i++) {
+            sum += Number(arrNumber[i]);
+        }
+
+        return sum;
+    }
+
+
+    console.log(sumDigits(-32))
 
 }
 
