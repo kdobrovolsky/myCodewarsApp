@@ -1051,6 +1051,8 @@ const promise = new Promise((resolve, reject) => {
     // "This is a test"        --> "This is a test"
     // "This is another test" --> "This is rehtona test"
 
+
+
     function spinWords(string){
         const arrString = string.split(' ');
 
