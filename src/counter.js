@@ -1064,7 +1064,6 @@ const promise = new Promise((resolve, reject) => {
 
         return arrString.join(' ');
     }
-
     //Задача 46
     //  6kuy
     // Реализуйте функцию, которая вычисляет разницу между двумя списками.
