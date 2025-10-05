@@ -1247,7 +1247,59 @@ const promise = new Promise((resolve, reject) => {
         return objString;
     }
 
-    console.log(count('aba'))
+    function analyzeText(text) {
+        const result = {
+            totalLetters: 0,
+            totalSpaces: 0,
+            mostFrequentLetter: '',
+            letterFrequency: {}
+        };
+
+        for(let char of text){
+            if(char === ' '){
+                result.totalLetters++
+            }else{
+                result.totalSpaces++;
+            }
+        }
+        return result;
+    }
+
+    //Задача 55
+    // Создайте функцию, которая возвращает значение, умноженное на 50 и увеличенное на 6.
+    // Если введенное значение является строкой, оно должно возвращать "Ошибка".
+
+    function problem(x){
+        if(typeof x === 'string') return 'Error'
+        return x * 50 + 6
+    }
+
+    //Задача 56
+    // Имея целое число в качестве входных данных, можете ли вы округлить его до следующего (то есть «большего или равного») кратного 5?
+    //     Примеры:
+    //     Вход: Выход:
+    //     0 -> 0
+    // 2 -> 5
+    // 3 -> 5
+    // 12 -> 15
+    // 21 -> 25
+    // 30 -> 30
+    // -2 -> 0
+    // -5 -> -5
+    //     Входным данным может быть любое положительное или отрицательное целое число (включая 0).
+    // Можно предположить, что все входные данные являются допустимыми целыми числами.
+
+    function roundToNext5(n){
+        if(n === 0) return  0
+
+         if(n % 5 !== 0 ){
+            return Math.ceil(n/5) *5 ;
+        }else {
+             return Math.floor(n/5) *5
+         }
+    }
+
+    console.log(roundToNext5(10))
 
 }
 
