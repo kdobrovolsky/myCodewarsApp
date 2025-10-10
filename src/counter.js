@@ -1373,16 +1373,36 @@ const promise = new Promise((resolve, reject) => {
     //     но без использования условных конструкций if или switch. Это намекает на использование другого подхода, например, объекта с функциями или карты (Map).
 
     function arithmetic(a, b, operator){
-       const operators = {
-           'add': (a, b) => a + b,
-           'subtract': (a, b) => a - b,
-           'multiply': (a, b) => a * b,
-           'divide': (a, b) => a / b,
-       }
-    return operators[operator](a, b);
+        const operators = {
+            'add': (a, b) => a + b,
+            'subtract': (a, b) => a - b,
+            'multiply': (a, b) => a * b,
+            'divide': (a, b) => a / b,
+        }
+        return operators[operator](a, b);
     }
 
-    console.log(arithmetic(5,2,'add'))
+    // Задача 62
+    // Даны цифры в виде списка. Верните наименьшее число, которое можно составить из этих цифр, используя каждую цифру только один раз (игнорируйте дубликаты).
+    // На вход функции будут подаваться только положительные целые числа в диапазоне от 1 до 9.
+    // Примеры
+    //     [1, 3, 1] ==> 13
+    //     [5, 7, 5, 9, 7] ==> 579
+    //     [1, 9, 3, 1, 7, 4, 6, 6, 7] ==> 134679
+
+    const minValue = (values) =>  Number(Array.from(new Set(values)).sort().join(''))
+
+
+    //Задача 63
+    // Ваша задача — написать функцию factorial (факториал)
+    function factorial(n){
+        let factor = 1;
+        for(let i = 1; i <= n; i++){
+            factor= factor *= i
+        }
+        return factor;
+    }
+    console.log(factorial(5))
 
 }
 
