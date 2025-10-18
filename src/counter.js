@@ -1533,7 +1533,17 @@ const promise = new Promise((resolve, reject) => {
         return digitalRoot(sum);
     }
 
-    console.log(digitalRoot(942))
+    //Задача 70
+    // Напишите функцию, которая проверяет, является ли строка палиндромом (читается одинаково слева направо и справа налево).
+    const palindromFunc = (text) => {
+        const cleanedStr = text.toLowerCase().replace(/[^a-zа-яё0-9]/g, '')
+        return cleanedStr === cleanedStr.split('').reverse().join('');
+    }
+
+
+
+
+    console.log(palindromFunc('Was it a car or a cat I saw'))
 
 
 }
