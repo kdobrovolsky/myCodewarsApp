@@ -1585,7 +1585,8 @@ const promise = new Promise((resolve, reject) => {
         return n*m-1
     }
 
-    console.log(breakChocolate(2,1))
+    console.log(expandedForm(100005))
+
 
 
 }
