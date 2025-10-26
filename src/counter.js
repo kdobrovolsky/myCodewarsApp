@@ -1560,14 +1560,6 @@ const promise = new Promise((resolve, reject) => {
         }
         return result.join(' + ')
     }
-
-
-
-
-
-    console.log(expandedForm(100005))
-
-
 }
 
 
