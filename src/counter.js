@@ -1561,6 +1561,7 @@ const promise = new Promise((resolve, reject) => {
         return result.join(' + ')
     }
 
+
     //Задача 72
     // Доработайте решение так, чтобы оно разбивало строку на пары из двух символов.
     //     Если строка содержит нечётное количество символов,
@@ -1628,6 +1629,7 @@ const promise = new Promise((resolve, reject) => {
 
     }
 
+<<<<<<< HEAD
 
 
     // Задача 76
@@ -1668,6 +1670,8 @@ const promise = new Promise((resolve, reject) => {
     }
 
     console.log(high('hello world'))
+=======
+>>>>>>> d7c395a13e41a6b7eb437f6d3fb043df3767daba
 }
 
 
