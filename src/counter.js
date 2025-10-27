@@ -1615,10 +1615,59 @@ const promise = new Promise((resolve, reject) => {
         return true;
     }
 
-    console.log(inAscOrder([1,2,4,7,19,3]))
+    //Задача 75
+    // Дан массив чисел. Верните новый массив длиной number, содержащий последние чётные числа из исходного массива (в том же порядке).
+    // Исходный массив не будет пустым и будет содержать как минимум number чётных чисел.
+    //     Например:
+    // ([1, 2, 3, 4, 5, 6, 7, 8, 9], 3) => [4, 6, 8]
+    // ([-22, 5, 3, 11, 26, -6, -7, -8, -9, -8, 26], 2) => [-8, 26]
+    // ([6, -25, 3, 7, 5, 5, 7, -3, 23], 1) => [6]
+
+    function evenNumbers(array, number) {
+    const oddArr = array.filter(t=> t % 2 === 0);
+
+    }
 
 
 
+    // Задача 76
+    // Создайте функцию, которая отвечает на вопрос «Играете ли вы на банджо?».
+    // Если ваше имя начинается с буквы «R» или строчной «r», то вы играете на банджо!
+    //     Функция принимает имя в качестве единственного аргумента и возвращает одну из следующих строк:
+    //     name + " plays banjo"
+    // name + " does not play banjo"
+    // Указанные имена всегда являются допустимыми строками.
+
+    function areYouPlayingBanjo(name) {
+    const nameLower = name.toLowerCase().split('');
+   return nameLower[0] === 'r' ?`${name} plays banjo`:`${name} does not play banjo`
+    }
+
+    //Задача 77
+    // Дана строка со словами. Вам нужно найти слово с наибольшим количеством очков.
+    //     Каждая буква слова приносит очки в соответствии со своей позицией в алфавите: a = 1, b = 2, c = 3 и так далее.
+    //     Например, счет слова abad равен 8 (1 + 2 + 1 + 4).
+    //     Вам нужно вернуть слово с наибольшим количеством очков в виде строки.
+    //     Если два слова имеют одинаковый счет, верните слово, которое встречается раньше в исходной строке.
+    //     Все буквы будут в нижнем регистре, и все входные данные будут корректными.
+
+    function high(x){
+    const alph = 'abcdefghijklmnopqrstuvwxyz'.split('')
+        const xToLow = x.toLowerCase().split(' ')
+        const sumTo = xToLow.map((word) => {
+            let sum = 0
+            for(let i = 0; i< word.length; i++){
+                const letterIndex = alph.indexOf(word[i])
+                sum += letterIndex +1
+            }
+            return sum
+        })
+        const maxScore = Math.max(...sumTo)
+        const maxIndex = sumTo.indexOf(maxScore)
+        return xToLow[maxIndex]
+    }
+
+    console.log(high('hello world'))
 }
 
 
