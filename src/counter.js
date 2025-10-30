@@ -1717,8 +1717,47 @@ const promise = new Promise((resolve, reject) => {
     return resStr
     }
 
-    console.log(solution('abc'))
 
+
+
+    //Задача 80
+    // Джейден Смит, сын Уилла Смита, является звездой таких фильмов, как «Каратэ-пацан» (2010) и «После нашей эры» (2013).
+    //     Также Джейден известен своей философией, которую он излагает в Твиттере. Когда он пишет в Твиттере, он известен тем, что почти всегда пишет каждое слово с заглавной буквы.
+    //     Для простоты вам нужно будет писать каждое слово с заглавной буквы; посмотрите, как ожидается оформление сокращений, в примере ниже.
+    //     Ваша задача — преобразовать строки так, как они были бы написаны Джейденом Смитом. Строки — это реальные цитаты Джейдена Смита, но они не капитализированы так,
+    //     как он их изначально напечатал.
+    //     Пример:
+    // Не в стиле Джейдена: «How can mirrors be real if our eyes aren't real»
+    // В стиле Джейдена: «How Can Mirrors Be Real If Our Eyes Aren't Real»
+
+    function toJadenCase(str) {
+        const strArr = str.split(' ')
+        let res = []
+        for(let uppCaseStr of strArr){
+           const cap =  uppCaseStr = uppCaseStr[0].toUpperCase() + uppCaseStr.slice(1)+' ';
+           res.push(cap)
+        }
+        return res.join(' ')
+    }
+
+    //Задача 81
+    // Создайте метод, который принимает список и элемент, и возвращает true, если элемент принадлежит списку, в противном случае - false.
+    function include(arr, item){
+    for (const items of arr){
+        if(items === item){
+            return true
+        }
+    }
+    return false
+    }
+
+    //Задача 82
+
+    function reverse(string){
+        return string.split(' ').reverse().join(' ')
+    }
+
+    console.log(reverse('Hello world'))
 }
 
 
