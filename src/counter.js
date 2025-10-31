@@ -1757,7 +1757,75 @@ const promise = new Promise((resolve, reject) => {
         return string.split(' ').reverse().join(' ')
     }
 
-    console.log(reverse('Hello world'))
+    //Задача 83
+    // Массив целых чисел, содержащий только чётные значения в том же порядке, в котором они были в исходном массиве
+
+    function noOdds( values ){
+    return values.filter(v => v % 2 === 1)
+    }
+
+
+    //Задача 84
+    // Когда предоставлена буква, верните её позицию в алфавите.
+    // Вход :: "a"
+    // Выход :: "Позиция в алфавите: 1"
+    // Примечание: Тестируются только строчные английские буквы
+
+    function position(letter){
+        const voyage = 'abcdefghijklmnopqrstuvwxyz'.split('')
+        for (let position of voyage){
+            if(letter === position){
+                return `Position of alphabet: ${voyage.indexOf(position) + 1}`
+            }
+        }
+    }
+
+    //Задача 85
+    // Мой дедушка всегда предсказывал, сколько лет люди проживут, и прямо перед своей смертью он раскрыл свой секрет!
+    //     В честь памяти моего дедушки мы напишем функцию, используя его формулу!
+    //     Возьмите список возрастов, в которых умер каждый из ваших прабабушек и прадедушек.
+    //     Умножьте каждое число само на себя.
+    //     Сложите все результаты вместе.
+    //     Извлеките квадратный корень из результата.
+    //     Разделите на два.
+    //     Пример:
+    // javascript
+    // predictAge(65, 60, 75, 55, 60, 63, 64, 45) === 86
+    // Примечание: результат должен быть округлен вниз до ближайшего целого числа.
+    //     Некоторые случайные тесты могут не пройти из-за ошибки в реализации JavaScript. Просто отправьте решение повторно, если это произойдет с вами.
+
+    function predictAge1(age1,age2,age3,age4,age5,age6,age7,age8){
+    const result = Math.sqrt(Math.pow(age1,2) + Math.pow(age2,2) + Math.pow(age3,2) + Math.pow(age4,2) + Math.pow(age5,2)
+        + Math.pow(age6,2) + Math.pow(age7,2) + Math.pow(age8,2)) /2
+        return Math.floor(result)
+    }
+
+    //Самый простой способ решения задачи
+    function predictAge(...ages){
+    return Math.floor(Math.hypot(...ages) / 2 || 0)
+    }
+
+
+    //Задача 86 5kyu
+    // Напишите алгоритм, который принимает массив и перемещает все нули в конец, сохраняя порядок остальных элементов.
+    // moveZeros([false,1,0,1,2,0,1,3,"a"]) // возвращает [false,1,1,2,1,3,"a",0,0]
+
+    function moveZeros(arr) {
+        const arrZiro = []
+        for(let findZiro of arr){
+            if(findZiro === 0){
+                arrZiro.push(findZiro)
+            }
+        }
+        const filterArr = arr.filter(t => t !== 0)
+        return filterArr.concat(arrZiro)
+    }
+
+    //2 вариант
+
+    const moveZeros2 = (arr) => arr.filter(t => t !== 0).concat(arr.filter(t => t === 0))
+
+    console.log(moveZeros2([false,1,0,1,2,0,1,3,"a"]))
 }
 
 
