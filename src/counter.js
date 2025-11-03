@@ -1825,6 +1825,8 @@ const promise = new Promise((resolve, reject) => {
 
     const moveZeros2 = (arr) => arr.filter(t => t !== 0).concat(arr.filter(t => t === 0))
 
+
+
     console.log(moveZeros2([false,1,0,1,2,0,1,3,"a"]))
 }
 
