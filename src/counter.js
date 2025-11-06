@@ -1826,8 +1826,84 @@ const promise = new Promise((resolve, reject) => {
     const moveZeros2 = (arr) => arr.filter(t => t !== 0).concat(arr.filter(t => t === 0))
 
 
+    //Задача 87
+    // Ваша задача — просуммировать разности между последовательными парами в массиве, упорядоченном по убыванию.
+    //     Пример
+    //     [2, 1, 10] --> 9
+    // В порядке убывания: [10, 2, 1]
+    // Сумма: (10 - 2) + (2 - 1) = 8 + 1 = 9
 
-    console.log(moveZeros2([false,1,0,1,2,0,1,3,"a"]))
+    function sumOfDifferences(arr) {
+        if (arr.length <= 1) return 0;
+
+        const sortedArr = arr.sort((a, b) => b - a);
+        let sum = 0;
+
+        for (let i = 0; i < sortedArr.length - 1; i++) {
+            sum += sortedArr[i] - sortedArr[i + 1];
+        }
+
+        return sum;
+    }
+
+    //Задача 88
+    // Напишите функцию, которая принимает массив чисел (в тестах - целые числа) и целевое число. Она должна найти два различных элемента в массиве, которые в сумме дают целевое значение.
+    //     Затем индексы этих элементов должны быть возвращены в виде кортежа/списка (в зависимости от языка) следующим образом: (индекс1, индекс2).
+    //     Для целей этой задачи некоторые тесты могут иметь несколько правильных ответов; любые допустимые решения будут приняты.
+    //     Входные данные всегда будут корректными (массив numbers будет длиной 2 или больше, все элементы будут числами; target всегда будет суммой двух различных элементов из этого массива).
+    //     Примеры:
+    //         twoSum([1, 2, 3], 4) // возвращает [0, 2] или [2, 0]
+    // twoSum([3, 2, 4], 6) // возвращает [1, 2] или [2, 1]
+
+    function twoSum(numbers, target) {
+       for(let i = 0; i < numbers.length; i++){
+           for (let j = i+1; j < numbers.length; j++){
+               if(numbers[i] + numbers[j] === target) {
+                   return [i, j]
+            }
+           }
+
+       }
+
+    }
+
+    //Задача 89
+    // Дан массив нечётной длины, состоящий из целых чисел. Все числа в массиве одинаковые, за исключением одного единственного.
+    //     Нужно реализовать метод, который принимает такой массив и возвращает это единственное отличающееся число.
+    //     Входной массив всегда будет корректным! (нечётная длина >= 3)
+    // Примеры:
+    //     [1, 1, 2] ==> 2
+    //         [17, 17, 3, 17, 17, 17, 17] ==> 3
+
+    function findUniq(arr) {
+    return arr.find(t=> arr.indexOf(t) === arr.lastIndexOf(t))
+    }
+
+
+    //Задача 90
+    // Панграмма - это предложение, которое содержит каждую букву алфавита хотя бы один раз.
+    //     Например, предложение "The quick brown fox jumps over the lazy dog" является панграммой,
+    //     потому что оно использует все буквы A-Z как минимум один раз (регистр не имеет значения).
+    // Дана строка. Определите, является ли она панграммой. Верните True, если является, и False, если нет. Игнорируйте цифры и знаки препинания.
+    //     Примеры:
+    // "The quick brown fox jumps over the lazy dog" → True
+    // "Hello world" → False (отсутствуют многие буквы алфавита)
+    // "ABCDEFGHIJKLMNOPQRSTUVWXYZ" → True
+    // "This is not a pangram" → False
+
+    function isPangram(string){
+    const alph = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.toLowerCase().split('')
+        const stringArray = string.toLowerCase().split('')
+        let res = 0
+        for(let iterString of alph){
+            if(stringArray.includes(iterString)){
+                res++
+            }
+        }
+        return res === 26
+    }
+
+    console.log(isPangram("The quick brown fox jumps over the lazy dog"))
 }
 
 
