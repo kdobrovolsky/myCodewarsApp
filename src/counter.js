@@ -1999,7 +1999,48 @@ const promise = new Promise((resolve, reject) => {
     return str.split('').filter(t => /[a-zA-Z]/.test(t)).reverse().join('')
     }
 
-    console.log(reverseLetter("krishan"))
+    //Задача 96
+    // Определите функцию, которая принимает целочисленный аргумент и возвращает логическое значение true или false в зависимости от того, является ли целое число простым.
+    //     Согласно Википедии, простое число — это натуральное число больше 1, которое не имеет положительных делителей, кроме 1 и самого себя.
+    //     Требования:
+    // Можно предполагать, что на вход будет подано целое число.
+    //     Нельзя предполагать, что число будет только положительным. Вам также могут передавать отрицательные числа (или 0).
+    // ПРИМЕЧАНИЕ о производительности: Не требуются сложные оптимизации, но самые тривиальные решения могут превысить лимит времени.
+    //     Числа могут достигать 2^31 (или аналогичного значения в зависимости от языка программирования). Перебор вплоть до n или n/2 будет слишком медленным.
+    //     Пример:
+    // text
+    // is_prime(1)
+    // is_prime(2)
+    // is_prime(-1)
+
+    function isPrime(num) {
+        if (num <= 1) return false
+        if (num === 2) return true
+        if (num !== 2 && num % 2 === 0) return false
+        for (let i = 3; i <= Math.sqrt(num); i += 2) {
+            if (num % i === 0) return false
+        }
+        return true
+    }
+
+    //Задача 97
+    // Ваша задача — удалить все повторяющиеся слова из строки, оставив только первые вхождения каждого слова.
+    //     Пример:
+    // Ввод:
+    //     'alpha beta beta gamma gamma gamma delta alpha beta beta gamma gamma gamma delta'
+    // Вывод:
+    //     'alpha beta gamma delta'
+
+    function removeDuplicateWords (s) {
+        const removeDublicate = new Set(s.split(' '))
+        const result = []
+        for(let sRes of removeDublicate){
+            result.push(sRes)
+        }
+    return result.join(' ')
+    }
+
+    console.log(removeDuplicateWords('alpha beta beta gamma gamma gamma delta alpha beta beta gamma gamma gamma delta'))
 }
 
 
