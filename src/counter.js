@@ -2040,7 +2040,24 @@ const promise = new Promise((resolve, reject) => {
     return result.join(' ')
     }
 
-    console.log(removeDuplicateWords('alpha beta beta gamma gamma gamma delta alpha beta beta gamma gamma gamma delta'))
+    //Задача 98
+    // Реализуйте функцию unique_in_order,
+    // которая принимает в качестве аргумента последовательность и возвращает список элементов,
+    // удаляя одинаковые значения, находящиеся рядом, и сохраняя исходный порядок элементов.
+
+    var uniqueInOrder=function(iterable){
+
+        let results = []
+        for (let i = 0; i<iterable.length; i++){
+            if(i === 0 || iterable[i] !== iterable[i-1]){
+                 results.push(iterable[i])
+            }
+        }
+        return results
+    }
+
+
+    console.log(uniqueInOrder('ABBCcAD'))
 }
 
 
