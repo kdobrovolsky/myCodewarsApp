@@ -2056,8 +2056,31 @@ const promise = new Promise((resolve, reject) => {
         return results
     }
 
+    //Задача 99
+    // Я дам тебе целое число. Верни мне фигуру, длина и ширина которой соответствуют этому числу. Число будет целым в диапазоне от 1 до 50.
+    function generateShape(integer){
+    let array = []
+        for(let i = 1; i<=integer; i++){
+            let plus = "+".repeat(integer)
+             array.push(plus )
+        }
+        return array.join('\n')
+    }
 
-    console.log(uniqueInOrder('ABBCcAD'))
+    //Задача 100
+    // Дан числовой ряд (последовательность чисел). Найди наибольшую сумму двух чисел в этой последовательности.
+    //     Например:
+    // text
+    //     [10, 14, 2, 23, 19] --> 42 (= 23 + 19)
+    //     [99, 2, 2, 23, 19] --> 122 (= 99 + 23)
+    // Входная последовательность содержит как минимум два элемента, и каждый элемент является целым числом.
+
+    function largestPairSum (numbers) {
+        const sotrArr = numbers.sort((a, b) => b - a)
+        return sotrArr[0] + sotrArr[1]
+    }
+
+    console.log(largestPairSum([10, 14, 2, 23, 19]))
 }
 
 
