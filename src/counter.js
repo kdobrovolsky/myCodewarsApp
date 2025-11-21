@@ -2080,7 +2080,78 @@ const promise = new Promise((resolve, reject) => {
         return sotrArr[0] + sotrArr[1]
     }
 
-    console.log(largestPairSum([10, 14, 2, 23, 19]))
+    //Задача101
+    // Ваша задача — создать таблицу умножения N×N, где размер передаётся в параметре.
+    //     Например, если заданный размер равен 3:
+    // 1 2 3
+    // 2 4 6
+    // 3 6 9
+    // Для приведённого примера возвращаемое значение должно быть:
+    //     [[1,2,3],[2,4,6],[3,6,9]]
+
+    //Задача 102
+    //В массиве найти максимальное число
+    const findMax  = (arrNumbers) => {
+    const arrSort = arrNumbers.sort((a, b) => b - a)
+        return arrSort[0]
+    }
+
+    function factorial(n) {
+        if(n === 0){
+            return 1
+        }else {
+          return  n * factorial(n-1)
+        }
+    }
+
+    //Задача 103
+    // Числа, заканчивающиеся нулями — это скучно.
+    //     В твоём мире они могут быть интересными, но не здесь.
+    //     Избавься от них. Только от конечных нулей.
+    //     Примеры:
+    // text
+    // 1450   -> 145
+    // 960000 -> 96
+    // 1050   -> 105
+    // -1050  -> -105
+    // 0      -> 0
+    // Примечание: Ноль должен оставаться как есть.
+
+        function noBoringZeros(n) {
+        const arrN = n.toString().split('')
+            if(arrN.length < 1) return
+          for (let i = 0; i< arrN.length; i++) {
+              if(arrN[arrN.length-1] === '0'){
+                  arrN.pop()
+              }else {
+                  break
+              }
+          }
+            return Number(arrN.join(''))
+        }
+
+        //Задача 104
+    // Если a = 1, b = 2, c = 3 ... z = 26,
+    //     Тогда l + o + v + e = 12 + 15 + 22 + 5 = 54
+    // и f + r + i + e + n + d + s + h + i + p = 6 + 18 + 9 + 5 + 14 + 4 + 19 + 8 + 9 + 16 = 108
+    // Таким образом, дружба в два раза сильнее любви :-)
+    // Ваша задача — написать функцию, которая вычисляет значение слова на основе суммы позиций букв алфавита.
+    //     Входные данные всегда будут состоять только из строчных букв и никогда не будут пустыми.
+    function wordsToMarks(string){
+    const alph = 'abcdefghijklmnopqrstuvwxyz'.split('')
+        const arrString = string.split('')
+        let result = 0
+        for(let str of arrString){
+            let index = alph.indexOf(str);
+            if (index !== -1) {
+                result += index + 1;
+            }
+
+        }
+        return result
+    }
+
+    console.log(wordsToMarks('love'))
 }
 
 
