@@ -2190,7 +2190,34 @@ const promise = new Promise((resolve, reject) => {
       return n>13 ? n -2 : n > 0 ? n -1 : n
     }
 
-    console.log(getRealFloor(-1))
+    //Задача 107
+
+    var capitals = function (word) {
+    const arrWord = word.split('')
+        const result = []
+     for(let i = 0; i< word.length; i++){
+        arrWord[i] === arrWord[i].toUpperCase ? result.push(i) : undefined
+
+
+     }
+        return result
+    };
+
+    function remove(string) {
+     const arrStr = string.split('')
+        for(let i = arrStr.length -1; i >= 0; i--){
+
+            if(arrStr[i] === '!'){
+                arrStr.pop()
+                console.log(arrStr)
+            }else {
+                break
+            }
+        }
+        return arrStr.join('')
+    }
+
+    console.log(remove('!!Hi!!!!!!!!'))
 
 }
 
