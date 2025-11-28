@@ -2203,21 +2203,56 @@ const promise = new Promise((resolve, reject) => {
         return result
     };
 
+
+    //Задача 108
+    // Описание:
+    //     Удалите все восклицательные знаки с конца предложения.
+    //     Примеры:
+    // "Hi!" ---> "Hi"
+    // "Hi!!!" ---> "Hi"
+    // "!Hi" ---> "!Hi"
+    // "!Hi!" ---> "!Hi"
+    // "Hi! Hi!" ---> "Hi! Hi"
+    // "Hi" ---> "Hi"
+    // Пояснение:
+    //     Удаляются только восклицательные знаки в конце строки
+    // Восклицательные знаки в начале или середине строки остаются без изменений
+    // Если в конце строки нет восклицательных знаков, строка возвращается без изменений
+
     function remove(string) {
      const arrStr = string.split('')
         for(let i = arrStr.length -1; i >= 0; i--){
-
             if(arrStr[i] === '!'){
                 arrStr.pop()
-                console.log(arrStr)
             }else {
                 break
             }
+
         }
-        return arrStr.join('')
+        return arrStr
     }
 
-    console.log(remove('!!Hi!!!!!!!!'))
+    //Задача 109
+    // Описание:
+    //     Удалите восклицательный знак с конца строки. Для этой задачи начального уровня можно предполагать, что входные данные всегда являются строкой, и нет необходимости это проверять.
+    //     Примеры:
+    // text
+    // "Hi!"     ---> "Hi"
+    // "Hi!!!"   ---> "Hi!!"
+    // "!Hi"     ---> "!Hi"
+    // "!Hi!"    ---> "!Hi"
+    // "Hi! Hi!" ---> "Hi! Hi"
+    // "Hi"      ---> "Hi"
+
+    function remove2 (string) {
+        const arrStr = string.split('')
+        if(arrStr.at(-1) === '!'){
+           arrStr.pop()
+        }
+        return arrStr
+    }
+
+    console.log(remove2('Hi!!!'))
 
 }
 
