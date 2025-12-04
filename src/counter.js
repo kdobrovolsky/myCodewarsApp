@@ -749,18 +749,16 @@ export function setupCounter(element) {
     //     Более подробную информацию о факториале можно найти здесь.
 
     function factorial(n) {
-    if(n > 12 || n < 0 ) {
-        throw new RangeError("Number must be between 0 and 12");
-    }
+        if (n > 12 || n < 0) {
+            throw new RangeError("Number must be between 0 and 12");
+        }
 
         let result = 1
         for (let i = 1; i <= n; i++) {
             result *= i
         }
-     return result
+        return result
     }
-
-
 
 
     //Задача 31
@@ -779,7 +777,7 @@ export function setupCounter(element) {
     // Все массивы или списки всегда будут содержать хотя бы один элемент, поэтому вам не нужно проверять длину.
     //     Также ваша функция всегда будет получать массив или список, вам не нужно проверять на null, undefined или подобные значения.
 
-    function minMax(arr){
+    function minMax(arr) {
         const sortedArray = arr.sort((a, b) => a - b)
         const minNum = sortedArray[0]
         const maxNum = sortedArray[sortedArray.length - 1]
@@ -797,14 +795,14 @@ export function setupCounter(element) {
     // XO("zzoo") => false
 
     function XO(str) {
-      const strArr = str.toLowerCase().split('')
+        const strArr = str.toLowerCase().split('')
         let countO = 0
         let countX = 0
         for (let i = 0; i < strArr.length; i++) {
-            if(strArr[i] === 'o'){
+            if (strArr[i] === 'o') {
                 countO++
-            }else if(strArr[i] === 'x'){
-                 countX++
+            } else if (strArr[i] === 'x') {
+                countX++
             }
         }
         return countO === countX
@@ -814,9 +812,8 @@ export function setupCounter(element) {
     const foo = (n) => {
 
         if (n === 1) return 1
-        return foo(n-1) * n
+        return foo(n - 1) * n
     }
-
 
 
     //Задача 33
@@ -833,15 +830,13 @@ export function setupCounter(element) {
     // 0,2,3 -> false
     // 1,2,9 -> false
 
-    function isTriangle(a,b,c)
-    {
+    function isTriangle(a, b, c) {
 
-        if(a <= 0 || b <= 0 || c <= 0) return false
+        if (a <= 0 || b <= 0 || c <= 0) return false
 
-        if(a + b > c && a + c > b && b + c > a && b + c > a){
+        if (a + b > c && a + c > b && b + c > a && b + c > a) {
             return true
-        }
-        else{
+        } else {
             return false
         }
     }
@@ -867,7 +862,7 @@ export function setupCounter(element) {
     function negationValue(string, value) {
         let count = string.length; // просто берем длину строки
 
-        if(count % 2 === 1){ // нечетное
+        if (count % 2 === 1) { // нечетное
             return !value
         } else { // четное
             return !!value
@@ -875,35 +870,35 @@ export function setupCounter(element) {
     }
 
     function negationValue2(string, value) {
-        return string.length % 2 === 1? !value: !!value
+        return string.length % 2 === 1 ? !value : !!value
     }
 
-  //Задача 35
-  //   Вам будет дан массив и предельное значение. Вы должны проверить,
-  //       что все значения в массиве меньше или равны предельному значению.
-  //       Если это так, верните true. В противном случае верните false.
-  //       Можно предположить, что все значения в массиве являются числами.
+    //Задача 35
+    //   Вам будет дан массив и предельное значение. Вы должны проверить,
+    //       что все значения в массиве меньше или равны предельному значению.
+    //       Если это так, верните true. В противном случае верните false.
+    //       Можно предположить, что все значения в массиве являются числами.
 
-    function smallEnough(a, limit){
-        const numA = a.sort((a, b) => b-a)
+    function smallEnough(a, limit) {
+        const numA = a.sort((a, b) => b - a)
         console.log(numA[0])
-        if(numA[0] <= limit){
+        if (numA[0] <= limit) {
             return true
-        }else {
+        } else {
             return false
         }
     }
 
-    function smallEnough2(a, limit){
-    return a.every(value => value <= limit)
+    function smallEnough2(a, limit) {
+        return a.every(value => value <= limit)
     }
 
     //Задача 36
     // Создайте выполненный Promise (промис) в JavaScript, который будет возвращать 'Hello World!'.
 
-const promise = new Promise((resolve, reject) => {
-    resolve('Hello world')
-})
+    const promise = new Promise((resolve, reject) => {
+        resolve('Hello world')
+    })
 
     //Задача 37
     // Вам дан массив целых чисел нечётной длины, в котором все числа одинаковые, кроме одного единственного числа.
@@ -911,14 +906,14 @@ const promise = new Promise((resolve, reject) => {
     //Входной массив всегда будет корректным! (нечётная длина >= 3)
 
     function stray(numbers) {
-       if(numbers[0] !== numbers[1] && numbers[1] !== numbers[2]){
-           return numbers[0]
-       }
-       for(let i = 1; i < numbers.length; i++){
-           if(numbers[i] !== numbers[0]){
-               return numbers[i]
-           }
-       }
+        if (numbers[0] !== numbers[1] && numbers[1] !== numbers[2]) {
+            return numbers[0]
+        }
+        for (let i = 1; i < numbers.length; i++) {
+            if (numbers[i] !== numbers[0]) {
+                return numbers[i]
+            }
+        }
     }
 
     //Задача 38
@@ -927,8 +922,8 @@ const promise = new Promise((resolve, reject) => {
     // Предполагается, что входная строка всегда является допустимой строкой. Например, входная строка может быть "1 year old" или "5 years old".
     // Первый символ в строке всегда является цифрой.
 
-    function getAge(inputString){
-    return Number(inputString[0])
+    function getAge(inputString) {
+        return Number(inputString[0])
     }
 
 
@@ -940,9 +935,9 @@ const promise = new Promise((resolve, reject) => {
     //     ["KARLY", "DANIEL", "KELSEY"] --> ["Karly", "Daniel", "Kelsey"]
 
     function capMe(names) {
-    return names.map((name) => {
-        return name.charAt(0).toUpperCase() + name.slice(1).toLowerCase()
-    })
+        return names.map((name) => {
+            return name.charAt(0).toUpperCase() + name.slice(1).toLowerCase()
+        })
     }
 
     //Задача 40
@@ -1018,13 +1013,12 @@ const promise = new Promise((resolve, reject) => {
     // Результат может содержать пятёрки. ;-)
     // Начальное число всегда будет меньше конечного. Оба числа могут быть отрицательными!
 
-    function dontGiveMeFive(start, end)
-    {
+    function dontGiveMeFive(start, end) {
         const arr = []
-        for(let i = start; i <= end; i++){
+        for (let i = start; i <= end; i++) {
             arr.push(i)
         }
-        return arr.filter( number => !String(number).includes('5') ).length
+        return arr.filter(number => !String(number).includes('5')).length
     }
 
     //Задача 44
@@ -1037,7 +1031,7 @@ const promise = new Promise((resolve, reject) => {
     //     Для корректной сортировки чисел используйте функцию сравнения:
 
     function flattenAndSort(array) {
-    return [].concat(...array).sort((a, b) => a - b)
+        return [].concat(...array).sort((a, b) => a - b)
 
     }
 
@@ -1052,18 +1046,18 @@ const promise = new Promise((resolve, reject) => {
     // "This is another test" --> "This is rehtona test"
 
 
-
-    function spinWords(string){
+    function spinWords(string) {
         const arrString = string.split(' ');
 
-        for(let i = 0; i < arrString.length; i++){
-            if(arrString[i].length >= 5){
+        for (let i = 0; i < arrString.length; i++) {
+            if (arrString[i].length >= 5) {
                 arrString[i] = arrString[i].split('').reverse().join('');
             }
         }
 
         return arrString.join(' ');
     }
+
     //Задача 46
     //  6kuy
     // Реализуйте функцию, которая вычисляет разницу между двумя списками.
@@ -1083,8 +1077,8 @@ const promise = new Promise((resolve, reject) => {
     //     "www.codewars.com#about" → "www.codewars.com"
     // "www.codewars.com?page=1" → "www.codewars.com?page=1" (остается без изменений, так как нет #)
 
-    function removeUrlAnchor(url){
-    return url.split('#')[0]
+    function removeUrlAnchor(url) {
+        return url.split('#')[0]
     }
 
     //Задача 48
@@ -1101,9 +1095,9 @@ const promise = new Promise((resolve, reject) => {
     // Элементы в возвращаемом массиве должны быть в том же порядке, что и в исходном массиве, переданном в вашу функцию, но с удаленными "гусями".
     //     Обратите внимание, что все строки будут в том же регистре, что и предоставленные, и некоторые элементы могут повторяться.
 
-    function gooseFilter (birds) {
+    function gooseFilter(birds) {
         let geese = ["African", "Roman Tufted", "Toulouse", "Pilgrim", "Steinbacher"];
-    return birds.filter(bird => !geese.includes(bird) )
+        return birds.filter(bird => !geese.includes(bird))
 
     }
 
@@ -1113,10 +1107,9 @@ const promise = new Promise((resolve, reject) => {
     // solution([1, 2, 10, 50, 5]); // должна вернуть [1,2,5,10,50]
     // solution(null); // должна вернуть []
 
-    function solution(nums){
-    return (nums || []).sort((a, b) => a - b) || nums
+    function solution(nums) {
+        return (nums || []).sort((a, b) => a - b) || nums
     }
-
 
 
     //Задача 50
@@ -1157,11 +1150,10 @@ const promise = new Promise((resolve, reject) => {
 
     //рекурсивное решение
     function persistence(num) {
-        if(num < 10) return 0
-       const res =  num.toString().split('').map(Number).reduce((a, b) => a * b);
-       return 1 + persistence(res)
+        if (num < 10) return 0
+        const res = num.toString().split('').map(Number).reduce((a, b) => a * b);
+        return 1 + persistence(res)
     }
-
 
 
     //Задача 52
@@ -1172,12 +1164,12 @@ const promise = new Promise((resolve, reject) => {
     // Полученный формат должен быть правильным для выполнения этой задачи.
     //     Не забудьте пробел после закрывающей скобки!
 
-    function createPhoneNumber(numbers){
-    return `(${numbers[0]}${numbers[1]}${numbers[2]}) ${numbers[3]}${numbers[4]}${numbers[5]}-${numbers[6]}${numbers[7]}${numbers[8]}${numbers[9]}`
+    function createPhoneNumber(numbers) {
+        return `(${numbers[0]}${numbers[1]}${numbers[2]}) ${numbers[3]}${numbers[4]}${numbers[5]}-${numbers[6]}${numbers[7]}${numbers[8]}${numbers[9]}`
     }
 
-    function createPhoneNumber2(numbers){
-        return `(${numbers.slice(0,3).join('')}) ${numbers.slice(3,6).join('')}-${numbers.slice(6).join('')}`;
+    function createPhoneNumber2(numbers) {
+        return `(${numbers.slice(0, 3).join('')}) ${numbers.slice(3, 6).join('')}-${numbers.slice(6).join('')}`;
     }
 
     //Задача 53
@@ -1195,10 +1187,10 @@ const promise = new Promise((resolve, reject) => {
 
 
     function sortArray(array) {
-     const oddNum = array.filter(item => item % 2 === 1).sort((a, b) => a - b)
+        const oddNum = array.filter(item => item % 2 === 1).sort((a, b) => a - b)
         let index = 0
-        return array.map(t=> {
-            if(t %2 !== 0 ){
+        return array.map(t => {
+            if (t % 2 !== 0) {
                 return oddNum[index++];
             }
             return t
@@ -1233,16 +1225,16 @@ const promise = new Promise((resolve, reject) => {
     // Что, если строка пустая? Тогда результат должен быть пустым объектом, {}.
 
     function count(string) {
-        if(string.length === 0) return {}
+        if (string.length === 0) return {}
         const arrString = string.split('');
         let objString = {}
 
-        for(let str of arrString) {
-           if(objString[str]){
-               objString[str]++;
-           }else {
-               objString[str] = 1;
-           }
+        for (let str of arrString) {
+            if (objString[str]) {
+                objString[str]++;
+            } else {
+                objString[str] = 1;
+            }
         }
         return objString;
     }
@@ -1255,10 +1247,10 @@ const promise = new Promise((resolve, reject) => {
             letterFrequency: {}
         };
 
-        for(let char of text){
-            if(char === ' '){
+        for (let char of text) {
+            if (char === ' ') {
                 result.totalLetters++
-            }else{
+            } else {
                 result.totalSpaces++;
             }
         }
@@ -1269,8 +1261,8 @@ const promise = new Promise((resolve, reject) => {
     // Создайте функцию, которая возвращает значение, умноженное на 50 и увеличенное на 6.
     // Если введенное значение является строкой, оно должно возвращать "Ошибка".
 
-    function problem(x){
-        if(typeof x === 'string') return 'Error'
+    function problem(x) {
+        if (typeof x === 'string') return 'Error'
         return x * 50 + 6
     }
 
@@ -1289,14 +1281,14 @@ const promise = new Promise((resolve, reject) => {
     //     Входным данным может быть любое положительное или отрицательное целое число (включая 0).
     // Можно предположить, что все входные данные являются допустимыми целыми числами.
 
-    function roundToNext5(n){
-        if(n === 0) return  0
+    function roundToNext5(n) {
+        if (n === 0) return 0
 
-         if(n % 5 !== 0 ){
-            return Math.ceil(n/5) *5 ;
-        }else {
-             return Math.floor(n/5) *5
-         }
+        if (n % 5 !== 0) {
+            return Math.ceil(n / 5) * 5;
+        } else {
+            return Math.floor(n / 5) * 5
+        }
     }
 
     //Задача 57
@@ -1312,7 +1304,7 @@ const promise = new Promise((resolve, reject) => {
     // Найдите уникальный элемент
 
     function findUniq(arr) {
-      return Array.from(new Set(arr)).find(value => arr.indexOf(value) === arr.lastIndexOf(value));
+        return Array.from(new Set(arr)).find(value => arr.indexOf(value) === arr.lastIndexOf(value));
     }
 
     // Задача 58
@@ -1323,9 +1315,9 @@ const promise = new Promise((resolve, reject) => {
     //     Проверяемые годы находятся в диапазоне 1600 ≤ год ≤ 4000.
 
     function isLeapYear(year) {
-        if(year % 4 === 0 &&  year % 100 !== 0  || year % 400 === 0){
+        if (year % 4 === 0 && year % 100 !== 0 || year % 400 === 0) {
             return true;
-        }else {
+        } else {
             return false;
         }
     }
@@ -1342,13 +1334,13 @@ const promise = new Promise((resolve, reject) => {
     // 4 => true
     // 25 => true
     // 26 => false
-    const isSquare = function(n){
-        if(n<0) return false;
-     if(Math.sqrt(n) % 1 === 0){
-         return true;
-     }else {
-         return false;
-     }
+    const isSquare = function (n) {
+        if (n < 0) return false;
+        if (Math.sqrt(n) % 1 === 0) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     //Задача 60
@@ -1372,7 +1364,7 @@ const promise = new Promise((resolve, reject) => {
     //     В задании предлагается реализовать функцию, которая работает как простой калькулятор, выбирая операцию на основе строкового значения,
     //     но без использования условных конструкций if или switch. Это намекает на использование другого подхода, например, объекта с функциями или карты (Map).
 
-    function arithmetic(a, b, operator){
+    function arithmetic(a, b, operator) {
         const operators = {
             'add': (a, b) => a + b,
             'subtract': (a, b) => a - b,
@@ -1383,7 +1375,6 @@ const promise = new Promise((resolve, reject) => {
     }
 
 
-
     // Задача 62
     // Даны цифры в виде списка. Верните наименьшее число, которое можно составить из этих цифр, используя каждую цифру только один раз (игнорируйте дубликаты).
     // На вход функции будут подаваться только положительные целые числа в диапазоне от 1 до 9.
@@ -1392,15 +1383,15 @@ const promise = new Promise((resolve, reject) => {
     //     [5, 7, 5, 9, 7] ==> 579
     //     [1, 9, 3, 1, 7, 4, 6, 6, 7] ==> 134679
 
-    const minValue = (values) =>  Number(Array.from(new Set(values)).sort().join(''))
+    const minValue = (values) => Number(Array.from(new Set(values)).sort().join(''))
 
 
     //Задача 63
     // Ваша задача — написать функцию factorial (факториал)
-    function factorial(n){
+    function factorial(n) {
         let factor = 1;
-        for(let i = 1; i <= n; i++){
-            factor= factor *= i
+        for (let i = 1; i <= n; i++) {
+            factor = factor *= i
         }
         return factor;
     }
@@ -1415,7 +1406,7 @@ const promise = new Promise((resolve, reject) => {
     // 30 --> 8 // у нас 8 делителей - 1, 2, 3, 5, 6, 10, 15 и 30
     // Примечание: вы должны возвращать только число - количество делителей. Числа в скобках показаны только для того, чтобы вы видели, какие числа учитываются в каждом случае.
 
-    function getDivisorsCnt(n){
+    function getDivisorsCnt(n) {
         let count = 0;
         for (let i = 1; i <= Math.sqrt(n); i++) {
             if (n % i === 0) {
@@ -1438,15 +1429,14 @@ const promise = new Promise((resolve, reject) => {
     //     Пожалуйста, имейте в виду, что в тестовых примерах гарантируется, что количество людей в автобусе всегда >= 0. Таким образом, возвращаемое целое число не может быть отрицательным.
     //     Второе значение в первой паре массива равно 0, так как на первой остановке автобус пуст.
 
-    var number = function(busStops){
-    let totalPeople = 0
-        for(let stop of busStops){
+    var number = function (busStops) {
+        let totalPeople = 0
+        for (let stop of busStops) {
             totalPeople = totalPeople + stop[0] - stop[1]
             console.log(totalPeople)
         }
         return totalPeople;
     }
-
 
 
     //Задача 66
@@ -1457,13 +1447,13 @@ const promise = new Promise((resolve, reject) => {
     //     [2, 4, 0, 100, 4, 11, 2602, 36] --> 11 (единственное нечётное число)
     // [160, 3, 1719, 19, 11, 13, -21] --> 160 (единственное чётное число)
 
-    function findOutlier(integers){
+    function findOutlier(integers) {
         let evenCount = 0;
         let oddCount = 0;
         let lastEven, lastOdd;
 
-        for(let num of integers){
-            if(num % 2 === 0){
+        for (let num of integers) {
+            if (num % 2 === 0) {
                 evenCount++;
                 lastEven = num;
             } else {
@@ -1499,12 +1489,12 @@ const promise = new Promise((resolve, reject) => {
     // "ABCDE" --> "!BCD!"
 
     function replace(s) {
-       let result = ''
+        let result = ''
         const vowels = 'aeiouAEIOU'
-        for(let char of s) {
-            if(vowels.includes(char)){
+        for (let char of s) {
+            if (vowels.includes(char)) {
                 result += '!'
-            }else{
+            } else {
                 result += char
             }
 
@@ -1526,7 +1516,7 @@ const promise = new Promise((resolve, reject) => {
         if (n < 10) return n;
         let sum = 0;
         const digits = n.toString().split('');
-        for(let i = 0; i < digits.length; i++){
+        for (let i = 0; i < digits.length; i++) {
             sum += +digits[i];
         }
 
@@ -1549,12 +1539,12 @@ const promise = new Promise((resolve, reject) => {
     // ПРИМЕЧАНИЕ: Все числа будут целыми и больше 0.
 
     function expandedForm(num) {
-       if(num <= 10) return num
+        if (num <= 10) return num
         const arrNum = num.toString().split('')
         const result = []
-        for(let i = 0; i < arrNum.length; i++){
-            if(arrNum[i] !== '0'){
-                const value = arrNum[i] + '0'.repeat(arrNum.length - i -1)
+        for (let i = 0; i < arrNum.length; i++) {
+            if (arrNum[i] !== '0') {
+                const value = arrNum[i] + '0'.repeat(arrNum.length - i - 1)
                 result.push(value)
             }
         }
@@ -1570,9 +1560,9 @@ const promise = new Promise((resolve, reject) => {
     // 'abc' => ['ab', 'c_']
     // 'abcdef' => ['ab', 'cd', 'ef']
 
-    function solution(str){
-     if(str.length === 0) return str
-    return str
+    function solution(str) {
+        if (str.length === 0) return str
+        return str
     }
 
     //Задача 73
@@ -1581,9 +1571,9 @@ const promise = new Promise((resolve, reject) => {
     //     Например, если вам дана шоколадка размером 2 x 1, вы можете разделить ее на отдельные квадратики за один разлом, но для размера 3 x 1 вам придется сделать два разлома.
     //     Если входные данные неверны, вы должны вернуть 0 (то есть разломы не требуются, если у нас нет шоколадки для разделения). Входные данные всегда будут неотрицательным целым числом.
 
-    function breakChocolate(n,m) {
-        if(n === 0 || m === 0) return 0
-        return n*m-1
+    function breakChocolate(n, m) {
+        if (n === 0 || m === 0) return 0
+        return n * m - 1
     }
 
     //Задача 74
@@ -1601,9 +1591,8 @@ const promise = new Promise((resolve, reject) => {
     // inAscOrder([9,8,7,6,5,4,3,2,1]); // возвращает false, потому что числа расположены в УБЫВАЮЩЕМ порядке
 
 
-
     function inAscOrder1(arr) {
-    const arrSort = [...arr].sort((a, b) => a - b)
+        const arrSort = [...arr].sort((a, b) => a - b)
         return JSON.stringify(arrSort) === JSON.stringify(arr)
     }
 
@@ -1625,11 +1614,9 @@ const promise = new Promise((resolve, reject) => {
     // ([6, -25, 3, 7, 5, 5, 7, -3, 23], 1) => [6]
 
     function evenNumbers(array, number) {
-    const oddArr = array.filter(t=> t % 2 === 0);
+        const oddArr = array.filter(t => t % 2 === 0);
 
     }
-
-
 
 
     // Задача 76
@@ -1641,8 +1628,8 @@ const promise = new Promise((resolve, reject) => {
     // Указанные имена всегда являются допустимыми строками.
 
     function areYouPlayingBanjo(name) {
-    const nameLower = name.toLowerCase().split('');
-   return nameLower[0] === 'r' ?`${name} plays banjo`:`${name} does not play banjo`
+        const nameLower = name.toLowerCase().split('');
+        return nameLower[0] === 'r' ? `${name} plays banjo` : `${name} does not play banjo`
     }
 
     //Задача 77
@@ -1653,14 +1640,14 @@ const promise = new Promise((resolve, reject) => {
     //     Если два слова имеют одинаковый счет, верните слово, которое встречается раньше в исходной строке.
     //     Все буквы будут в нижнем регистре, и все входные данные будут корректными.
 
-    function high(x){
-    const alph = 'abcdefghijklmnopqrstuvwxyz'.split('')
+    function high(x) {
+        const alph = 'abcdefghijklmnopqrstuvwxyz'.split('')
         const xToLow = x.toLowerCase().split(' ')
         const sumTo = xToLow.map((word) => {
             let sum = 0
-            for(let i = 0; i< word.length; i++){
+            for (let i = 0; i < word.length; i++) {
                 const letterIndex = alph.indexOf(word[i])
-                sum += letterIndex +1
+                sum += letterIndex + 1
             }
             return sum
         })
@@ -1668,7 +1655,6 @@ const promise = new Promise((resolve, reject) => {
         const maxIndex = sumTo.indexOf(maxScore)
         return xToLow[maxIndex]
     }
-
 
 
     //Задача 78
@@ -1682,14 +1668,14 @@ const promise = new Promise((resolve, reject) => {
     // [1,2,2,3,3,3,4,3,3,3,2,2,1] → должно вернуть 4, так как оно встречается 1 раз (что является нечётным).
 
     function findOdd(arr) {
-    let count = {}
+        let count = {}
         for (let i = 0; i < arr.length; i++) {
             const num = arr[i]
-            count[num] = (count[num] || 0 ) +1
+            count[num] = (count[num] || 0) + 1
         }
 
-        for(const res in count){
-            if(count[res] % 2 === 1){
+        for (const res in count) {
+            if (count[res] % 2 === 1) {
                 return +res
             }
         }
@@ -1704,20 +1690,18 @@ const promise = new Promise((resolve, reject) => {
     // 'abc' => ['ab', 'c_']
     // 'abcdef' => ['ab', 'cd', 'ef']
 
-    function solution(str){
-        const arrStr =  str.split('')
-        const resStr= []
-    for(let i = 0; i< arrStr.length; i+=2){
-       if(arrStr[i+1]){
-           resStr.push(arrStr[i] + arrStr[i+1])
-       }else {
-           resStr.push(arrStr[i] + '_')
-       }
+    function solution(str) {
+        const arrStr = str.split('')
+        const resStr = []
+        for (let i = 0; i < arrStr.length; i += 2) {
+            if (arrStr[i + 1]) {
+                resStr.push(arrStr[i] + arrStr[i + 1])
+            } else {
+                resStr.push(arrStr[i] + '_')
+            }
         }
-    return resStr
+        return resStr
     }
-
-
 
 
     //Задача 80
@@ -1733,35 +1717,35 @@ const promise = new Promise((resolve, reject) => {
     function toJadenCase(str) {
         const strArr = str.split(' ')
         let res = []
-        for(let uppCaseStr of strArr){
-           const cap =  uppCaseStr = uppCaseStr[0].toUpperCase() + uppCaseStr.slice(1)+' ';
-           res.push(cap)
+        for (let uppCaseStr of strArr) {
+            const cap = uppCaseStr = uppCaseStr[0].toUpperCase() + uppCaseStr.slice(1) + ' ';
+            res.push(cap)
         }
         return res.join(' ')
     }
 
     //Задача 81
     // Создайте метод, который принимает список и элемент, и возвращает true, если элемент принадлежит списку, в противном случае - false.
-    function include(arr, item){
-    for (const items of arr){
-        if(items === item){
-            return true
+    function include(arr, item) {
+        for (const items of arr) {
+            if (items === item) {
+                return true
+            }
         }
-    }
-    return false
+        return false
     }
 
     //Задача 82
 
-    function reverse(string){
+    function reverse(string) {
         return string.split(' ').reverse().join(' ')
     }
 
     //Задача 83
     // Массив целых чисел, содержащий только чётные значения в том же порядке, в котором они были в исходном массиве
 
-    function noOdds( values ){
-    return values.filter(v => v % 2 === 1)
+    function noOdds(values) {
+        return values.filter(v => v % 2 === 1)
     }
 
 
@@ -1771,10 +1755,10 @@ const promise = new Promise((resolve, reject) => {
     // Выход :: "Позиция в алфавите: 1"
     // Примечание: Тестируются только строчные английские буквы
 
-    function position(letter){
+    function position(letter) {
         const voyage = 'abcdefghijklmnopqrstuvwxyz'.split('')
-        for (let position of voyage){
-            if(letter === position){
+        for (let position of voyage) {
+            if (letter === position) {
                 return `Position of alphabet: ${voyage.indexOf(position) + 1}`
             }
         }
@@ -1794,15 +1778,15 @@ const promise = new Promise((resolve, reject) => {
     // Примечание: результат должен быть округлен вниз до ближайшего целого числа.
     //     Некоторые случайные тесты могут не пройти из-за ошибки в реализации JavaScript. Просто отправьте решение повторно, если это произойдет с вами.
 
-    function predictAge1(age1,age2,age3,age4,age5,age6,age7,age8){
-    const result = Math.sqrt(Math.pow(age1,2) + Math.pow(age2,2) + Math.pow(age3,2) + Math.pow(age4,2) + Math.pow(age5,2)
-        + Math.pow(age6,2) + Math.pow(age7,2) + Math.pow(age8,2)) /2
+    function predictAge1(age1, age2, age3, age4, age5, age6, age7, age8) {
+        const result = Math.sqrt(Math.pow(age1, 2) + Math.pow(age2, 2) + Math.pow(age3, 2) + Math.pow(age4, 2) + Math.pow(age5, 2)
+            + Math.pow(age6, 2) + Math.pow(age7, 2) + Math.pow(age8, 2)) / 2
         return Math.floor(result)
     }
 
     //Самый простой способ решения задачи
-    function predictAge(...ages){
-    return Math.floor(Math.hypot(...ages) / 2 || 0)
+    function predictAge(...ages) {
+        return Math.floor(Math.hypot(...ages) / 2 || 0)
     }
 
 
@@ -1812,8 +1796,8 @@ const promise = new Promise((resolve, reject) => {
 
     function moveZeros(arr) {
         const arrZiro = []
-        for(let findZiro of arr){
-            if(findZiro === 0){
+        for (let findZiro of arr) {
+            if (findZiro === 0) {
                 arrZiro.push(findZiro)
             }
         }
@@ -1856,14 +1840,14 @@ const promise = new Promise((resolve, reject) => {
     // twoSum([3, 2, 4], 6) // возвращает [1, 2] или [2, 1]
 
     function twoSum(numbers, target) {
-       for(let i = 0; i < numbers.length; i++){
-           for (let j = i+1; j < numbers.length; j++){
-               if(numbers[i] + numbers[j] === target) {
-                   return [i, j]
+        for (let i = 0; i < numbers.length; i++) {
+            for (let j = i + 1; j < numbers.length; j++) {
+                if (numbers[i] + numbers[j] === target) {
+                    return [i, j]
+                }
             }
-           }
 
-       }
+        }
 
     }
 
@@ -1876,7 +1860,7 @@ const promise = new Promise((resolve, reject) => {
     //         [17, 17, 3, 17, 17, 17, 17] ==> 3
 
     function findUniq(arr) {
-    return arr.find(t=> arr.indexOf(t) === arr.lastIndexOf(t))
+        return arr.find(t => arr.indexOf(t) === arr.lastIndexOf(t))
     }
 
 
@@ -1891,12 +1875,12 @@ const promise = new Promise((resolve, reject) => {
     // "ABCDEFGHIJKLMNOPQRSTUVWXYZ" → True
     // "This is not a pangram" → False
 
-    function isPangram(string){
-    const alph = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.toLowerCase().split('')
+    function isPangram(string) {
+        const alph = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.toLowerCase().split('')
         const stringArray = string.toLowerCase().split('')
         let res = 0
-        for(let iterString of alph){
-            if(stringArray.includes(iterString)){
+        for (let iterString of alph) {
+            if (stringArray.includes(iterString)) {
                 res++
             }
         }
@@ -1919,11 +1903,11 @@ const promise = new Promise((resolve, reject) => {
         const descendingArray = [...array].sort((a, b) => b - a).join('')
         const original = array.join('')
 
-        if(original === ascendingArray){
+        if (original === ascendingArray) {
             return 'yes, ascending'
-        }else if(original === descendingArray){
+        } else if (original === descendingArray) {
             return 'yes, descending'
-        }else {
+        } else {
             return 'no'
         }
     }
@@ -1943,16 +1927,16 @@ const promise = new Promise((resolve, reject) => {
 
     function multiplicationTable(size) {
         let table = []
-        for (let i = 0; i < size; i++){
-            let row =[]
-            for (let j = 0; j < size; j++){
-            let resultJ = (i+1)*(j+1)
+        for (let i = 0; i < size; i++) {
+            let row = []
+            for (let j = 0; j < size; j++) {
+                let resultJ = (i + 1) * (j + 1)
                 row.push(resultJ)
 
             }
             table.push(row)
         }
-            return table
+        return table
     }
 
     // Задача 93
@@ -1982,7 +1966,7 @@ const promise = new Promise((resolve, reject) => {
     // ([6, -25, 3, 7, 5, 5, 7, -3, 23], 1) => [6]
 
 
-    const evenNumbers1 = (array, number) =>  array.filter(t => t % 2 === 0).slice(-number)
+    const evenNumbers1 = (array, number) => array.filter(t => t % 2 === 0).slice(-number)
 
     //Задача 95
     // Задача
@@ -1996,7 +1980,7 @@ const promise = new Promise((resolve, reject) => {
     //     [output] строка
 
     function reverseLetter(str) {
-    return str.split('').filter(t => /[a-zA-Z]/.test(t)).reverse().join('')
+        return str.split('').filter(t => /[a-zA-Z]/.test(t)).reverse().join('')
     }
 
     //Задача 96
@@ -2031,13 +2015,13 @@ const promise = new Promise((resolve, reject) => {
     // Вывод:
     //     'alpha beta gamma delta'
 
-    function removeDuplicateWords (s) {
+    function removeDuplicateWords(s) {
         const removeDublicate = new Set(s.split(' '))
         const result = []
-        for(let sRes of removeDublicate){
+        for (let sRes of removeDublicate) {
             result.push(sRes)
         }
-    return result.join(' ')
+        return result.join(' ')
     }
 
     //Задача 98
@@ -2045,12 +2029,12 @@ const promise = new Promise((resolve, reject) => {
     // которая принимает в качестве аргумента последовательность и возвращает список элементов,
     // удаляя одинаковые значения, находящиеся рядом, и сохраняя исходный порядок элементов.
 
-    var uniqueInOrder=function(iterable){
+    var uniqueInOrder = function (iterable) {
 
         let results = []
-        for (let i = 0; i<iterable.length; i++){
-            if(i === 0 || iterable[i] !== iterable[i-1]){
-                 results.push(iterable[i])
+        for (let i = 0; i < iterable.length; i++) {
+            if (i === 0 || iterable[i] !== iterable[i - 1]) {
+                results.push(iterable[i])
             }
         }
         return results
@@ -2058,11 +2042,11 @@ const promise = new Promise((resolve, reject) => {
 
     //Задача 99
     // Я дам тебе целое число. Верни мне фигуру, длина и ширина которой соответствуют этому числу. Число будет целым в диапазоне от 1 до 50.
-    function generateShape(integer){
-    let array = []
-        for(let i = 1; i<=integer; i++){
+    function generateShape(integer) {
+        let array = []
+        for (let i = 1; i <= integer; i++) {
             let plus = "+".repeat(integer)
-             array.push(plus )
+            array.push(plus)
         }
         return array.join('\n')
     }
@@ -2075,7 +2059,7 @@ const promise = new Promise((resolve, reject) => {
     //     [99, 2, 2, 23, 19] --> 122 (= 99 + 23)
     // Входная последовательность содержит как минимум два элемента, и каждый элемент является целым числом.
 
-    function largestPairSum (numbers) {
+    function largestPairSum(numbers) {
         const sotrArr = numbers.sort((a, b) => b - a)
         return sotrArr[0] + sotrArr[1]
     }
@@ -2091,16 +2075,16 @@ const promise = new Promise((resolve, reject) => {
 
     //Задача 102
     //В массиве найти максимальное число
-    const findMax  = (arrNumbers) => {
-    const arrSort = arrNumbers.sort((a, b) => b - a)
+    const findMax = (arrNumbers) => {
+        const arrSort = arrNumbers.sort((a, b) => b - a)
         return arrSort[0]
     }
 
     function factorial(n) {
-        if(n === 0){
+        if (n === 0) {
             return 1
-        }else {
-          return  n * factorial(n-1)
+        } else {
+            return n * factorial(n - 1)
         }
     }
 
@@ -2117,31 +2101,31 @@ const promise = new Promise((resolve, reject) => {
     // 0      -> 0
     // Примечание: Ноль должен оставаться как есть.
 
-        function noBoringZeros(n) {
+    function noBoringZeros(n) {
         const arrN = n.toString().split('')
-            if(arrN.length < 1) return
-          for (let i = 0; i< arrN.length; i++) {
-              if(arrN[arrN.length-1] === '0'){
-                  arrN.pop()
-              }else {
-                  break
-              }
-          }
-            return Number(arrN.join(''))
+        if (arrN.length < 1) return
+        for (let i = 0; i < arrN.length; i++) {
+            if (arrN[arrN.length - 1] === '0') {
+                arrN.pop()
+            } else {
+                break
+            }
         }
+        return Number(arrN.join(''))
+    }
 
-        //Задача 104
+    //Задача 104
     // Если a = 1, b = 2, c = 3 ... z = 26,
     //     Тогда l + o + v + e = 12 + 15 + 22 + 5 = 54
     // и f + r + i + e + n + d + s + h + i + p = 6 + 18 + 9 + 5 + 14 + 4 + 19 + 8 + 9 + 16 = 108
     // Таким образом, дружба в два раза сильнее любви :-)
     // Ваша задача — написать функцию, которая вычисляет значение слова на основе суммы позиций букв алфавита.
     //     Входные данные всегда будут состоять только из строчных букв и никогда не будут пустыми.
-    function wordsToMarks(string){
-    const alph = 'abcdefghijklmnopqrstuvwxyz'.split('')
+    function wordsToMarks(string) {
+        const alph = 'abcdefghijklmnopqrstuvwxyz'.split('')
         const arrString = string.split('')
         let result = 0
-        for(let str of arrString){
+        for (let str of arrString) {
             let index = alph.indexOf(str);
             if (index !== -1) {
                 result += index + 1;
@@ -2166,8 +2150,8 @@ const promise = new Promise((resolve, reject) => {
     // Если вместо массива передано пустое значение (null, None, Nothing, nil и т.д.), или заданный массив является пустым списком, или списком, содержащим только 1 элемент, верните 0.
 
     function sumArray(array) {
-        if(!array || array.length <= 1) return 0
-    return array.sort((a, b) => a - b).slice(1,-1).reduce((a, b) => a + b,0)
+        if (!array || array.length <= 1) return 0
+        return array.sort((a, b) => a - b).slice(1, -1).reduce((a, b) => a + b, 0)
 
     }
 
@@ -2187,19 +2171,19 @@ const promise = new Promise((resolve, reject) => {
     // -3  =>  -3
 
     function getRealFloor(n) {
-      return n>13 ? n -2 : n > 0 ? n -1 : n
+        return n > 13 ? n - 2 : n > 0 ? n - 1 : n
     }
 
     //Задача 107
 
     var capitals = function (word) {
-    const arrWord = word.split('')
+        const arrWord = word.split('')
         const result = []
-     for(let i = 0; i< word.length; i++){
-        arrWord[i] === arrWord[i].toUpperCase ? result.push(i) : undefined
+        for (let i = 0; i < word.length; i++) {
+            arrWord[i] === arrWord[i].toUpperCase ? result.push(i) : undefined
 
 
-     }
+        }
         return result
     };
 
@@ -2220,11 +2204,11 @@ const promise = new Promise((resolve, reject) => {
     // Если в конце строки нет восклицательных знаков, строка возвращается без изменений
 
     function remove(string) {
-     const arrStr = string.split('')
-        for(let i = arrStr.length -1; i >= 0; i--){
-            if(arrStr[i] === '!'){
+        const arrStr = string.split('')
+        for (let i = arrStr.length - 1; i >= 0; i--) {
+            if (arrStr[i] === '!') {
                 arrStr.pop()
-            }else {
+            } else {
                 break
             }
 
@@ -2244,10 +2228,10 @@ const promise = new Promise((resolve, reject) => {
     // "Hi! Hi!" ---> "Hi! Hi"
     // "Hi"      ---> "Hi"
 
-    function remove2 (string) {
+    function remove2(string) {
         const arrStr = string.split('')
-        if(arrStr.at(-1) === '!'){
-           arrStr.pop()
+        if (arrStr.at(-1) === '!') {
+            arrStr.pop()
         }
         return arrStr
     }
@@ -2268,10 +2252,10 @@ const promise = new Promise((resolve, reject) => {
     // массив содержит допустимые индексы.
 
     function scramble(str, arr) {
-    const arrStr = str.split('')
+        const arrStr = str.split('')
         let result = []
-        for(let i = 0; i<arr.length; i++ ){
-        result[arr[i]] = arrStr[i]
+        for (let i = 0; i < arr.length; i++) {
+            result[arr[i]] = arrStr[i]
         }
         return result.join('')
     }
@@ -2298,10 +2282,90 @@ const promise = new Promise((resolve, reject) => {
         const arrStr1 = s1.split('')
         const arrStr2 = s2.split('')
         const result = new Set(arrStr1.concat(arrStr2).sort())
-        return [...result].join('')
+        return [...result].join(' ')
     }
 
-    console.log(longest('xyaabbbccccdefww' , 'xxxxyyyyabklmopq'))
+    //Задача 113
+    // Шаг 1: Создайте функцию с названием encode(), чтобы заменить все строчные гласные в заданной строке числами в соответствии со следующим шаблоном:
+    //     a → 1
+    // e → 2
+    // i → 3
+    // o → 4
+    // u → 5
+    // Например, encode("hello") вернет "h2ll4". В этом ката не нужно беспокоиться о заглавных гласных.
+    //     Шаг 2: Теперь создайте функцию с названием decode(), чтобы преобразовать числа обратно в гласные в соответствии с тем же шаблоном, показанным выше.
+    //     Например, decode("h3 th2r2") вернет "hi there".
+    //     Для простоты можно предположить, что любые числа, передаваемые в функцию, будут соответствовать гласным.
+
+
+    function encode(string) {
+        const arrStr = string.split('')
+        const result = []
+        for (let str of arrStr) {
+            switch (str) {
+                case 'a':
+                    result.push('1')
+                    break;
+                case 'e':
+                    result.push('2')
+                    break;
+                case 'i':
+                    result.push('3')
+                    break;
+                case 'o':
+                    result.push('4')
+                    break;
+                case 'u':
+                    result.push('5')
+                    break;
+                default:
+                    result.push(str)
+            }
+
+        }
+        return result.join('')
+    }
+
+
+    function encod2(string) {
+        const table = ['a','e','i','o','u']
+        return string.split('').map(s => table.indexOf(s) +1 || s).join('')
+    }
+
+
+    function decode(string) {
+        const arrStr = string.split('')
+        const result = []
+        for (let str of arrStr) {
+            switch (str) {
+                case '1':
+                    result.push('a')
+                    break;
+                case '2':
+                    result.push('e')
+                    break;
+                case '3':
+                    result.push('i')
+                    break;
+                case '4':
+                    result.push('o')
+                    break;
+                case '5':
+                    result.push('u')
+                    break;
+                default:
+                    result.push(str)
+            }
+
+        }
+        return result.join('')
+    }
+
+
+
+
+
+    console.log(encod2('hello'))
 
 }
 
