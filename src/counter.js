@@ -2414,9 +2414,6 @@ export function setupCounter(element) {
         return result
     }
 
-    console.log(countChars('Hello World '))
-
-
 
     //Задача 117
     // Напишите функцию, которая получает URL в виде строки, извлекает только имя домена и возвращает его в виде строки. Например:
@@ -2437,9 +2434,23 @@ export function setupCounter(element) {
         return cleanedStr === reversedStr;
     };
 
-    console.log(funcPalindrome('А роза упала на лапу Азора'))
+
 
     //Задача 119
     // Задача: Напишите функцию, которая находит второе максимальное число в массиве.
 
+    const secondMax = (arr) => {
+        if(arr.length <= 1) return null;
+    const sortArray = [...arr].sort((a, b) => b - a );
+    const max = sortArray[0]
+    for(let i = 1; sortArray.length > i; i++){
+        if(sortArray[i]<max){
+            return sortArray[i]
+        }
+    }
+
+    return null
+    }
+
+    console.log(secondMax([7,5,3,2]))
 }
