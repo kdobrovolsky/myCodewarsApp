@@ -2383,7 +2383,7 @@ export function setupCounter(element) {
         return result
     }
 
-    //Задача 115
+    //  Задача 115
     // Вам дан массив целых чисел нечётной длины, в котором все числа одинаковы, за исключением одного единственного числа.
     //     Завершите метод, который принимает такой массив и возвращает это единственное отличающееся число.
     //     Входной массив всегда будет корректным! (нечётная длина >= 3)
@@ -2396,8 +2396,50 @@ export function setupCounter(element) {
         return arr.find(num => arr.indexOf(num) === arr.lastIndexOf(num));
     }
 
-    console.log(multipleOfIndex([0,2,3,6,9]))
+    //Задача 116
+
+    // Напишите функцию, которая принимает строку и возвращает объект с количеством каждого символа.
+
+    const countChars = (str) => {
+
+    const result = {}
+        for(let char of str.toLowerCase() ){
+            if(char === ' ') continue
+            if (result[char]) {
+                result[char] += 1;
+            } else {
+                result[char] = 1;
+            }
+        }
+        return result
+    }
+
+    console.log(countChars('Hello World '))
+
+
+
+    //Задача 117
+    // Напишите функцию, которая получает URL в виде строки, извлекает только имя домена и возвращает его в виде строки. Например:
+    // url = "http://github.com/carbonfive/raygun" -> имя домена = "github"
+    // url = "http://www.zombie-bites.com" -> имя домена = "zombie-bites"
+    // url = "https://www.cnet.com" -> имя домена = "cnet"
+
+    function domainName(url){
+       return  url.replace(/https?:\/\/(www\.)?/, '').replace(/\.\w+$/, '')
+    }
+
+    //Задача 118
+    // Задача: Напишите функцию, которая проверяет, является ли строка палиндромом
+
+    const funcPalindrome = (str) => {
+        const cleanedStr = str.toLowerCase().replace(/[^a-zа-яё0-9]/g, '');
+        const reversedStr = cleanedStr.split('').reverse().join('');
+        return cleanedStr === reversedStr;
+    };
+
+    console.log(funcPalindrome('А роза упала на лапу Азора'))
+
+    //Задача 119
+    // Задача: Напишите функцию, которая находит второе максимальное число в массиве.
 
 }
-
-
