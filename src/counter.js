@@ -2463,6 +2463,19 @@ export function setupCounter(element) {
         return longest
     }
 
-    console.log(longestWord("I am learning JavaScript"))
+    //Задача 121
+    // Напиши функцию removeDuplicates(arr), которая принимает массив и возвращает новый массив без повторов.
+
+    const removeDuplicates = (numberArray) => {
+    const result = []
+        for(let num of  numberArray){
+            if(!result.includes(num)){
+                result.push(num)
+            }
+        }
+        return result
+    }
+
+    console.log(removeDuplicates([1, 2, 2, 3, 1]))
 
 }
