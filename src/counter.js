@@ -2452,5 +2452,17 @@ export function setupCounter(element) {
     return null
     }
 
-    console.log(secondMax([7,5,3,2]))
+   //Задача 120
+   //  Напиши функцию, которая принимает строку и возвращает самое длинное слово.
+    const longestWord = (str) => {
+    const strArr = str.split(' ')
+        let longest = ''
+        for(let word of strArr){
+            if(word.length > longest.length){ longest = word}
+        }
+        return longest
+    }
+
+    console.log(longestWord("I am learning JavaScript"))
+
 }
