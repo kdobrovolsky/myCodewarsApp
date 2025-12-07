@@ -2476,6 +2476,19 @@ export function setupCounter(element) {
         return result
     }
 
-    console.log(removeDuplicates([1, 2, 2, 3, 1]))
+    //Задача 122 Найти самое частое значение в массиве
+
+    const mostFrequent = (num) => {
+    let res = {}
+        for(let numRes of num){
+        if(!res[num]){
+           return  res += num
+        }
+        }
+    }
+
+    
+    
+    console.log(mostFrequent([1,2,2,3,3,3,4]))
 
 }
