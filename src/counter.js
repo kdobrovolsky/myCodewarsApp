@@ -2452,6 +2452,7 @@ export function setupCounter(element) {
     return null
     }
 
+<<<<<<< HEAD
     //Задача 120
     //Перевернуть строку
 
@@ -2464,12 +2465,21 @@ export function setupCounter(element) {
         return result.join('')
     }
 
+<<<<<<< HEAD
 
 
     //Задача 121
     //  Напиши функцию, которая принимает строку и возвращает самое длинное слово.
     const longestWord = (str) => {
         const strArr = str.split(' ')
+=======
+    console.log(reverseString('hello'))
+=======
+   //Задача 120
+   //  Напиши функцию, которая принимает строку и возвращает самое длинное слово.
+    const longestWord = (str) => {
+    const strArr = str.split(' ')
+>>>>>>> a8752bbbd6dfcbf35052e33dee28dfa0ccae0767
         let longest = ''
         for(let word of strArr){
             if(word.length > longest.length){ longest = word}
@@ -2477,11 +2487,19 @@ export function setupCounter(element) {
         return longest
     }
 
+<<<<<<< HEAD
     //Задача 122
     // Напиши функцию removeDuplicates(arr), которая принимает массив и возвращает новый массив без повторов.
 
     const removeDuplicates = (numberArray) => {
         const result = []
+=======
+    //Задача 121
+    // Напиши функцию removeDuplicates(arr), которая принимает массив и возвращает новый массив без повторов.
+
+    const removeDuplicates = (numberArray) => {
+    const result = []
+>>>>>>> a8752bbbd6dfcbf35052e33dee28dfa0ccae0767
         for(let num of  numberArray){
             if(!result.includes(num)){
                 result.push(num)
@@ -2490,6 +2508,7 @@ export function setupCounter(element) {
         return result
     }
 
+<<<<<<< HEAD
     //Задача 123 Найти самое частое значение в массиве
 
     const mostFrequent = (num) => {
@@ -2520,4 +2539,22 @@ export function setupCounter(element) {
 
 
 
+=======
+    //Задача 122 Найти самое частое значение в массиве
+
+    const mostFrequent = (num) => {
+    let res = {}
+        for(let numRes of num){
+        if(!res[num]){
+           return  res += num
+        }
+        }
+    }
+
+    
+    
+    console.log(mostFrequent([1,2,2,3,3,3,4]))
+
+>>>>>>> 8b8cf86e0fdf9d30145956a30577bd80763b9b60
+>>>>>>> a8752bbbd6dfcbf35052e33dee28dfa0ccae0767
 }
