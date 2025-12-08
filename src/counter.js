@@ -2452,6 +2452,7 @@ export function setupCounter(element) {
     return null
     }
 
+<<<<<<< HEAD
     //Задача 120
     //Перевернуть строку
 
@@ -2465,4 +2466,45 @@ export function setupCounter(element) {
     }
 
     console.log(reverseString('hello'))
+=======
+   //Задача 120
+   //  Напиши функцию, которая принимает строку и возвращает самое длинное слово.
+    const longestWord = (str) => {
+    const strArr = str.split(' ')
+        let longest = ''
+        for(let word of strArr){
+            if(word.length > longest.length){ longest = word}
+        }
+        return longest
+    }
+
+    //Задача 121
+    // Напиши функцию removeDuplicates(arr), которая принимает массив и возвращает новый массив без повторов.
+
+    const removeDuplicates = (numberArray) => {
+    const result = []
+        for(let num of  numberArray){
+            if(!result.includes(num)){
+                result.push(num)
+            }
+        }
+        return result
+    }
+
+    //Задача 122 Найти самое частое значение в массиве
+
+    const mostFrequent = (num) => {
+    let res = {}
+        for(let numRes of num){
+        if(!res[num]){
+           return  res += num
+        }
+        }
+    }
+
+    
+    
+    console.log(mostFrequent([1,2,2,3,3,3,4]))
+
+>>>>>>> 8b8cf86e0fdf9d30145956a30577bd80763b9b60
 }
