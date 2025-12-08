@@ -2501,6 +2501,22 @@ export function setupCounter(element) {
         }
     }
 
+    //Задача 124 Найти максимальное число в массиве
+
+    const maxCount = (arr) => {
+        let result = arr[0]
+
+        for(let num of arr){
+            if(num > result){
+                result = num
+            }
+        }
+        return result;
+    }
+
+    console.log(maxCount([1,3,6,9,8]))
+
+
 
 
 
