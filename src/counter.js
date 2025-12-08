@@ -2452,5 +2452,17 @@ export function setupCounter(element) {
     return null
     }
 
-    console.log(secondMax([7,5,3,2]))
+    //Задача 120
+    //Перевернуть строку
+
+    const reverseString = (str) => {
+
+        const result = []
+        for(let i = str.length -1 ; i >= 0; i--) {
+            result.push(str[i])
+        }
+        return result.join('')
+    }
+
+    console.log(reverseString('hello'))
 }
