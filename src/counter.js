@@ -2514,9 +2514,6 @@ export function setupCounter(element) {
         return result;
     }
 
-    console.log(maxCount([1,3,6,9,8]))
-
-
     //Задачи на тему this
     //Написать counter
     function Counter() {
@@ -2536,7 +2533,7 @@ export function setupCounter(element) {
     counter.inc();//2
     counter.inc();//3
     counter.dec();//3-1 = 2
-    console.log(counter.get())
+
     //Задание 2
     //Какой вывод ?
     var length = 10;
@@ -2549,17 +2546,35 @@ export function setupCounter(element) {
     const array = [1, 2, obj.method];
     //Какой вывод?
     var name = "Global";
-    const obj = {
+    const _obj = {
         name: "Object",
         getName() {
             return this.name;
         }
     };
     const fn = obj.getName;
-    console.log(obj.getName()); // object
-    console.log(fn()); // Globacl в нестрогом режиме из-за var, т.к он всплывает, если в строгом, то undefined
-    console.log(array[2]());
 
 
+    //Задача 125
+    // Мы хотим создать функцию, которая возвращает массив функций, каждая из которых возвращает свой индекс в массиве. Для лучшего понимания — вот пример:
+    //     text
+    // var callbacks = createFunctions(5); // создаём массив, содержащий 5 функций
+    //
+    // callbacks[0](); // должно вернуть 0
+    // callbacks[3](); // должно вернуть 3
+    // Мы уже реализовали эту функцию, но когда мы запускаем код, результат оказывается не таким, как мы ожидали. Можете понять, в чём ошибка? Также доступен тестовый набор.
 
+    function createFunctions(n) {
+        var callbacks = [];
+
+        for (var i=0; i<n; i++) {
+            callbacks.push(function() {
+                return i;
+            });
+        }
+
+        return callbacks;
+    }
+
+    console.log(createFunctions(5));
 }
