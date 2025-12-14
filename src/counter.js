@@ -2576,5 +2576,36 @@ export function setupCounter(element) {
         return callbacks;
     }
 
-    console.log(createFunctions(5));
+
+    //Задача 126
+    // Напишите метод, который принимает один аргумент — имя, а затем приветствует это имя с заглавной буквы и заканчивается восклицательным знаком.
+    //     Пример:
+    // text
+    // "riley" --> "Hello Riley!"
+    // "JACK"  --> "Hello Jack!"
+
+    let greet = function(name) {
+    const capitalLetter = name.split("")[0].toUpperCase();
+    const names = name.toLowerCase().split('').splice(1).join('');
+        return `Hello ${capitalLetter.concat(names)}!`
+    };
+
+
+    //Задача 127
+    // Напишите функцию, которая преобразует имя в инициалы. В этой задаче строго используются два слова, разделенные одним пробелом.
+    //     На выходе должны быть две заглавные буквы, разделенные точкой.
+    //     Результат должен выглядеть так:
+    //     Sam Harris => S.H
+    // patrick feeney => P.F
+
+    function abbrevName(name){
+    let arrName = name.split(' ')
+        const result = []
+        for (let names of arrName){
+        result.push(`${names[0].toUpperCase()}`)
+        }
+    return result.join('.');
+    }
+
+    console.log(abbrevName('Sam Harris'));
 }
