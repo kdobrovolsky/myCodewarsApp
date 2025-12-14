@@ -68,20 +68,20 @@
 // типы массива и элемента должны быть связаны через дженерики;
 // функция должна быть чистой (не должна изменять оригинальный массив):
 
-const updateArray = <T>(array: T[], value: T): T[] => {
-    if (array.includes(value)) {
-        return array;
-    } else {
-        return [...array, value];
-    }
-}
-
-// Строки
-const stringArray = ["apple", "banana", "cherry"];
-console.log(updateArray(stringArray, "banana")); // ['apple', 'banana', 'cherry']
-console.log(updateArray(stringArray, "strawberry")); // ['apple', 'banana', 'cherry', 'strawberry']
-
-// Числа
-const numberArray = [1, 2, 3];
-console.log(updateArray(numberArray, 2)); // [1, 2, 3]
-console.log(updateArray(numberArray, 4)); // [1, 2, 3, 4]
+// const updateArray = <T>(array: T[], value: T): T[] => {
+//     if (array.includes(value)) {
+//         return array;
+//     } else {
+//         return [...array, value];
+//     }
+// }
+//
+// // Строки
+// const stringArray = ["apple", "banana", "cherry"];
+// console.log(updateArray(stringArray, "banana")); // ['apple', 'banana', 'cherry']
+// console.log(updateArray(stringArray, "strawberry")); // ['apple', 'banana', 'cherry', 'strawberry']
+//
+// // Числа
+// const numberArray = [1, 2, 3];
+// console.log(updateArray(numberArray, 2)); // [1, 2, 3]
+// console.log(updateArray(numberArray, 4)); // [1, 2, 3, 4]
