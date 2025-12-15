@@ -2631,14 +2631,37 @@ export function setupCounter(element) {
            }
        }
         return [result1.join(''), result2.join('')];
-    };
+    }
 
 
     function capitalize(s){
         const odd = s.split('').map((t,i)=> i % 2 ===0 ? t.toUpperCase() : t.toLowerCase()).join('');
         const even = s.split('').map((t,i)=> i % 2 ===0 ? t.toLowerCase() : t.toUpperCase()).join('');
         return [odd, even]
-    };
+    }
 
-    console.log(capitalize('AbRACADAbRA'));
+    //Задача 128
+    // Твоя машина старая, она легко ломается. Амортизаторы уже не работают, и ты думаешь, что она выдержит примерно ещё 15 кочек, прежде чем окончательно сломается.
+    //     К несчастью для тебя, твоя дорога очень ухабистая! Дана строка, показывающая либо ровную дорогу (_), либо кочки (n).
+    //     Если ты сможешь добраться до дома, встретив 15 кочек или меньше, верни "Woohoo!", иначе верни "Car Dead".
+
+    function bump(x){
+    const arrX = x.split('')
+        let countHummock = 0
+        for(let hummock of arrX){
+            if(hummock === 'n'){
+                countHummock++
+                console.log(countHummock)
+            }
+        }
+        if(countHummock <= 15){
+            return  "Woohoo!"
+        }else {
+            return "Car Dead"
+        }
+
+    }
+
+    console.log(bump('nnnnnnnnn_________nnnnnnn'))
+
 }
