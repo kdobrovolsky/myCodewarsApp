@@ -2693,6 +2693,8 @@ export function setupCounter(element) {
         return number * Math.pow(5, number > 0 ? number.toString().split('').length : number.toString().split('').length -1)
     }
 
+    
+
     console.log(multiply(-3))
 
 }
