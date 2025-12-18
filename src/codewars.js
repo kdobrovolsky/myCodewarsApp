@@ -2693,8 +2693,22 @@ export function setupCounter(element) {
         return number * Math.pow(5, number > 0 ? number.toString().split('').length : number.toString().split('').length -1)
     }
 
-    
+    //Задача 131
+    // Найдите число с наибольшим количеством цифр.
+    //     Если два числа в массиве аргументов имеют одинаковое количество цифр, верните первое из них в массиве.
 
-    console.log(multiply(-3))
+    function findLongest(array){
+        let result = [0]
+    for(let num of array){
+        if(num.toString().length > result.toString().length){
+            result = num
+        }
+    }
+    return result
+    }
+
+
+
+    console.log(findLongest([1,34,117216,182920,66]))
 
 }
