@@ -2761,6 +2761,17 @@ export function setupCounter(element) {
          return result
         }
 
-    console.log(vowelIndices('YoMama'))
+
+    //Задача 135
+    // Данная строка произвольной длины, содержащая любые символы ASCII. Напишите функцию для определения, содержит ли строка целое слово "English".
+    //     Порядок символов важен — строка "abcEnglishdef" считается корректной, а "abcnEglishsef" — нет.
+    //     Регистр букв не имеет значения — "eNglisH" также считается корректным.
+    //     Верните результат в виде логических значений: true, если строка содержит "English", и false, если нет.
+
+    function spEng(sentence){
+        return sentence.toLowerCase().includes('english')
+    }
+
+    console.log(spEng('abcEnglishdef'))
 
 }
