@@ -2821,6 +2821,17 @@ export function setupCounter(element) {
        return res+ccSlc
     }
 
-    console.log(maskify('4556364607935616'))
+    //Задача 138
+    // Напишите функцию, которая возвращает количество переданных ей аргументов.
+    //     Примеры:
+    // args_count() --> 0
+    // args_count('a') --> 1
+    // args_count('a', 'b') --> 2
+
+    const args_count = (...arg) => {
+    return arg.length;
+    }
+
+    console.log(args_count('a','f'))
 
 }
