@@ -2851,6 +2851,23 @@ export function setupCounter(element) {
         }
     }
 
-    console.log(min([6,2,3,4,5],'value'))
+
+    //Задача 140
+    // Магическим индексом в массиве A[1...n-1] называется такой индекс i, что A[i] = i.
+    //     Дан отсортированный массив различных целых чисел. Напишите метод для поиска магического индекса (если он существует) в массиве A.
+    // findMagic([-20,-10,2,10,20]); // Возвращает 2
+
+    function findMagic(arr){
+    for(let i = 0; i < arr.length; i++){
+        if(arr[i] === i){
+            return arr[i]
+        }
+    }
+    return -1
+    }
+
+    console.log(findMagic([-20,-10,2,10,20]))
+
+
 
 }
