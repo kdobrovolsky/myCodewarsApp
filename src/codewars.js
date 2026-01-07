@@ -3056,5 +3056,21 @@ return result
 
     }
 
-    console.log(checkCoupon("123", "123", "July 9, 2015", "July 2, 2015"))
+
+    //Задача 149
+    // Дана строка. Необходимо вернуть строку, в которой каждый символ (с учётом регистра) повторяется один раз.
+    // Примеры (Ввод -> Вывод):
+    // "String" -> "SSttrriinngg"
+    // "Hello World" -> "HHeelllloo WWoorrlldd"
+    // "1234!_ " -> "11223344!!__ "
+    // Удачи!
+
+    function doubleChar(str) {
+       return  str.split('').map(t=> t +t).join('')
+
+    }
+
+    console.log(doubleChar('String'))
+
+
 }
