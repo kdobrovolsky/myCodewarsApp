@@ -3070,7 +3070,10 @@ return result
 
     }
 
-    console.log(doubleChar('String'))
+
+    console.log(multiTable(5))
+
+
 
 
 }
