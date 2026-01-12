@@ -3129,9 +3129,37 @@ return result
     // Можно считать, что оба целых числа являются положительными.
 
     function addN(num1, num2) {
+        let result = []
+        const num1Arr = String(num1).split('')
+        const num2Arr = String(num2).split('')
+
+        for(let i = 0; i<num1Arr.length; i++){
+        result.push(+num1Arr[i] + +num2Arr[i])
+        }
+
+        return Number(result.join(''))
+
+    }
+
+    //Задача 153
+    // Моей подруге нужно новое название для её музыкальной группы. Ей нравятся группы, которые используют формулу: "The" + существительное с заглавной первой буквой, например:
+    // "dolphin" -> "The Dolphin"
+    // Однако, когда существительное НАЧИНАЕТСЯ и ЗАКАНЧИВАЕТСЯ на одну и ту же букву, ей нравится повторять существительное
+    // дважды и соединять их вместе, объединяя первую и последнюю буквы в одно слово (БЕЗ "The" в начале), вот так:
+    //     "alaska" -> "Alaskalaska"
+    // Завершите функцию, которая принимает существительное в виде строки и возвращает предпочтительное название группы в виде строки.
+
+    function bandNameGenerator(str) {
+    const strArr = str.split('')
+
+        if(strArr[0] === strArr[strArr.length-1]){
+            return str.charAt(0).toUpperCase() + str.slice(1) + str.slice(1)
+        }else {
+            return `The ${str.charAt(0).toUpperCase() + str.slice(1)}`
+        }
 
 
     }
 
-    console.log(addN('248', '208'))
+    console.log(bandNameGenerator('alaskaf'))
 }
