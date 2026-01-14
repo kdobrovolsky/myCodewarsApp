@@ -2328,8 +2328,8 @@ export function setupCounter(element) {
 
 
     function encod2(string) {
-        const table = ['a','e','i','o','u']
-        return string.split('').map(s => table.indexOf(s) +1 || s).join('')
+        const table = ['a', 'e', 'i', 'o', 'u']
+        return string.split('').map(s => table.indexOf(s) + 1 || s).join('')
     }
 
 
@@ -2372,11 +2372,11 @@ export function setupCounter(element) {
     function multipleOfIndex(array) {
         const result = []
         for (let i = 0; i < array.length; i++) {
-            if(i === 0) {
-                if(array[i] === 0) result.push(i)
+            if (i === 0) {
+                if (array[i] === 0) result.push(i)
                 continue
             }
-            if(array[i] % i === 0){
+            if (array[i] % i === 0) {
                 result.push(array[i])
             }
         }
@@ -2402,9 +2402,9 @@ export function setupCounter(element) {
 
     const countChars = (str) => {
 
-    const result = {}
-        for(let char of str.toLowerCase() ){
-            if(char === ' ') continue
+        const result = {}
+        for (let char of str.toLowerCase()) {
+            if (char === ' ') continue
             if (result[char]) {
                 result[char] += 1;
             } else {
@@ -2421,8 +2421,8 @@ export function setupCounter(element) {
     // url = "http://www.zombie-bites.com" -> имя домена = "zombie-bites"
     // url = "https://www.cnet.com" -> имя домена = "cnet"
 
-    function domainName(url){
-       return  url.replace(/https?:\/\/(www\.)?/, '').replace(/\.\w+$/, '')
+    function domainName(url) {
+        return url.replace(/https?:\/\/(www\.)?/, '').replace(/\.\w+$/, '')
     }
 
     //Задача 118
@@ -2435,21 +2435,20 @@ export function setupCounter(element) {
     };
 
 
-
     //Задача 119
     // Задача: Напишите функцию, которая находит второе максимальное число в массиве.
 
     const secondMax = (arr) => {
-        if(arr.length <= 1) return null;
-    const sortArray = [...arr].sort((a, b) => b - a );
-    const max = sortArray[0]
-    for(let i = 1; sortArray.length > i; i++){
-        if(sortArray[i]<max){
-            return sortArray[i]
+        if (arr.length <= 1) return null;
+        const sortArray = [...arr].sort((a, b) => b - a);
+        const max = sortArray[0]
+        for (let i = 1; sortArray.length > i; i++) {
+            if (sortArray[i] < max) {
+                return sortArray[i]
+            }
         }
-    }
 
-    return null
+        return null
     }
 
     //Задача 120
@@ -2458,12 +2457,11 @@ export function setupCounter(element) {
     const reverseString = (str) => {
 
         const result = []
-        for(let i = str.length -1 ; i >= 0; i--) {
+        for (let i = str.length - 1; i >= 0; i--) {
             result.push(str[i])
         }
         return result.join('')
     }
-
 
 
     //Задача 121
@@ -2471,8 +2469,10 @@ export function setupCounter(element) {
     const longestWord = (str) => {
         const strArr = str.split(' ')
         let longest = ''
-        for(let word of strArr){
-            if(word.length > longest.length){ longest = word}
+        for (let word of strArr) {
+            if (word.length > longest.length) {
+                longest = word
+            }
         }
         return longest
     }
@@ -2482,8 +2482,8 @@ export function setupCounter(element) {
 
     const removeDuplicates = (numberArray) => {
         const result = []
-        for(let num of  numberArray){
-            if(!result.includes(num)){
+        for (let num of numberArray) {
+            if (!result.includes(num)) {
                 result.push(num)
             }
         }
@@ -2494,9 +2494,9 @@ export function setupCounter(element) {
 
     const mostFrequent = (num) => {
         let res = {}
-        for(let numRes of num){
-            if(!res[num]){
-                return  res += num
+        for (let numRes of num) {
+            if (!res[num]) {
+                return res += num
             }
         }
     }
@@ -2506,8 +2506,8 @@ export function setupCounter(element) {
     const maxCount = (arr) => {
         let result = arr[0]
 
-        for(let num of arr){
-            if(num > result){
+        for (let num of arr) {
+            if (num > result) {
                 result = num
             }
         }
@@ -2518,16 +2518,17 @@ export function setupCounter(element) {
     //Написать counter
     function Counter() {
         this.value = 0
-        this.inc = function(){
+        this.inc = function () {
             this.value++
         }
-        this.dec = function(){
+        this.dec = function () {
             this.value--
         }
-        this.get = function(){
-            return  this.value
+        this.get = function () {
+            return this.value
         }
     }
+
     const counter = new Counter();
     counter.inc();//1
     counter.inc();//2
@@ -2567,8 +2568,8 @@ export function setupCounter(element) {
     function createFunctions(n) {
         var callbacks = [];
 
-        for (var i=0; i<n; i++) {
-            callbacks.push(function() {
+        for (var i = 0; i < n; i++) {
+            callbacks.push(function () {
                 return i;
             });
         }
@@ -2584,9 +2585,9 @@ export function setupCounter(element) {
     // "riley" --> "Hello Riley!"
     // "JACK"  --> "Hello Jack!"
 
-    let greet = function(name) {
-    const capitalLetter = name.split("")[0].toUpperCase();
-    const names = name.toLowerCase().split('').splice(1).join('');
+    let greet = function (name) {
+        const capitalLetter = name.split("")[0].toUpperCase();
+        const names = name.toLowerCase().split('').splice(1).join('');
         return `Hello ${capitalLetter.concat(names)}!`
     };
 
@@ -2598,13 +2599,13 @@ export function setupCounter(element) {
     //     Sam Harris => S.H
     // patrick feeney => P.F
 
-    function abbrevName(name){
-    let arrName = name.split(' ')
+    function abbrevName(name) {
+        let arrName = name.split(' ')
         const result = []
-        for (let names of arrName){
-        result.push(`${names[0].toUpperCase()}`)
+        for (let names of arrName) {
+            result.push(`${names[0].toUpperCase()}`)
         }
-    return result.join('.');
+        return result.join('.');
     }
 
     //Задача 128
@@ -2612,31 +2613,31 @@ export function setupCounter(element) {
     //     Например, capitalize("abcdef") = ['AbCdEf', 'aBcDeF']. Смотрите тестовые примеры для дополнительных примеров.
     //     Входные данные будут строкой в нижнем регистре без пробелов.
 
-    function capitalize1(s){
+    function capitalize1(s) {
         const arrS = s.split('');
         let result1 = []
         let result2 = []
-       for(let i=0; i<arrS.length; i++){
-           if(i % 2 === 0){
-               result1.push(arrS[i].toUpperCase())
-           }else {
-               result1.push(arrS[i].toLowerCase())
-           }
-       }
-       for(let i=0; i<arrS.length; i++){
-           if(i % 2 === 0){
-               result2.push(arrS[i].toLowerCase())
-           }else {
-               result2.push(arrS[i].toUpperCase())
-           }
-       }
+        for (let i = 0; i < arrS.length; i++) {
+            if (i % 2 === 0) {
+                result1.push(arrS[i].toUpperCase())
+            } else {
+                result1.push(arrS[i].toLowerCase())
+            }
+        }
+        for (let i = 0; i < arrS.length; i++) {
+            if (i % 2 === 0) {
+                result2.push(arrS[i].toLowerCase())
+            } else {
+                result2.push(arrS[i].toUpperCase())
+            }
+        }
         return [result1.join(''), result2.join('')];
     }
 
 
-    function capitalize(s){
-        const odd = s.split('').map((t,i)=> i % 2 ===0 ? t.toUpperCase() : t.toLowerCase()).join('');
-        const even = s.split('').map((t,i)=> i % 2 ===0 ? t.toLowerCase() : t.toUpperCase()).join('');
+    function capitalize(s) {
+        const odd = s.split('').map((t, i) => i % 2 === 0 ? t.toUpperCase() : t.toLowerCase()).join('');
+        const even = s.split('').map((t, i) => i % 2 === 0 ? t.toLowerCase() : t.toUpperCase()).join('');
         return [odd, even]
     }
 
@@ -2645,18 +2646,18 @@ export function setupCounter(element) {
     //     К несчастью для тебя, твоя дорога очень ухабистая! Дана строка, показывающая либо ровную дорогу (_), либо кочки (n).
     //     Если ты сможешь добраться до дома, встретив 15 кочек или меньше, верни "Woohoo!", иначе верни "Car Dead".
 
-    function bump(x){
-    const arrX = x.split('')
+    function bump(x) {
+        const arrX = x.split('')
         let countHummock = 0
-        for(let hummock of arrX){
-            if(hummock === 'n'){
+        for (let hummock of arrX) {
+            if (hummock === 'n') {
                 countHummock++
                 console.log(countHummock)
             }
         }
-        if(countHummock <= 15){
-            return  "Woohoo!"
-        }else {
+        if (countHummock <= 15) {
+            return "Woohoo!"
+        } else {
             return "Car Dead"
         }
 
@@ -2670,10 +2671,10 @@ export function setupCounter(element) {
     // "red blue gold" => "gold"
 
     function longestWords(stringOfWords) {
-       const arrStr = stringOfWords.split(' ');
-       let lonesy = ''
-        for(let str of arrStr){
-            if(str.length >= lonesy.length){
+        const arrStr = stringOfWords.split(' ');
+        let lonesy = ''
+        for (let str of arrStr) {
+            if (str.length >= lonesy.length) {
                 lonesy = str
             }
 
@@ -2689,22 +2690,22 @@ export function setupCounter(element) {
     // 0 --> 0 ( 0 * 5¹)
     // -3 --> -15 ( -3 * 5¹)
 
-    function multiply(number){
-        return number * Math.pow(5, number > 0 ? number.toString().split('').length : number.toString().split('').length -1)
+    function multiply(number) {
+        return number * Math.pow(5, number > 0 ? number.toString().split('').length : number.toString().split('').length - 1)
     }
 
     //Задача 131
     // Найдите число с наибольшим количеством цифр.
     //     Если два числа в массиве аргументов имеют одинаковое количество цифр, верните первое из них в массиве.
 
-    function findLongest(array){
+    function findLongest(array) {
         let result = [0]
-    for(let num of array){
-        if(num.toString().length > result.toString().length){
-            result = num
+        for (let num of array) {
+            if (num.toString().length > result.toString().length) {
+                result = num
+            }
         }
-    }
-    return result
+        return result
     }
 
     //Задача 132
@@ -2719,8 +2720,8 @@ export function setupCounter(element) {
     //     Если любой из входных параметров является пустой строкой, считайте его равным нулю.
     //     Входные данные и ожидаемый результат никогда не превысят предела 32-битного целого числа со знаком (2^31 − 1).
 
-    function sumStr(a,b) {
-    return `${Number(a)+Number(b)}`
+    function sumStr(a, b) {
+        return `${Number(a) + Number(b)}`
     }
 
     //Задача 133
@@ -2733,8 +2734,8 @@ export function setupCounter(element) {
 
     function arrayString(string) {
         const arr = string.split(',');
-        if( arr.length <= 3) return null
-        return arr.slice(1,-1).join('')
+        if (arr.length <= 3) return null
+        return arr.slice(1, -1).join('')
     }
 
     //Задача 134
@@ -2749,17 +2750,17 @@ export function setupCounter(element) {
     // Гласными в данном контексте считаются: a, e, i, o, u, y (включая заглавные буквы).
     // Индексация ведётся от 1 до n (не с нуля!).
 
-        function vowelIndices(word){
-            const vowels = ['a', 'e', 'i', 'o', 'u', "y"]
-            const wordLowCase = word.toLowerCase()
-            let result = []
-         for(let i = 0; i < wordLowCase.length; i++){
-          if(vowels.includes(wordLowCase[i])){
-              result.push(i+1)
-          }
-         }
-         return result
+    function vowelIndices(word) {
+        const vowels = ['a', 'e', 'i', 'o', 'u', "y"]
+        const wordLowCase = word.toLowerCase()
+        let result = []
+        for (let i = 0; i < wordLowCase.length; i++) {
+            if (vowels.includes(wordLowCase[i])) {
+                result.push(i + 1)
+            }
         }
+        return result
+    }
 
 
     //Задача 135
@@ -2768,7 +2769,7 @@ export function setupCounter(element) {
     //     Регистр букв не имеет значения — "eNglisH" также считается корректным.
     //     Верните результат в виде логических значений: true, если строка содержит "English", и false, если нет.
 
-    function spEng(sentence){
+    function spEng(sentence) {
         return sentence.toLowerCase().includes('english')
     }
 
@@ -2784,16 +2785,16 @@ export function setupCounter(element) {
     // gimme([5, 10, 14]) => 1
     // Число 10 находится между 5 и 14, а индекс 10 во входном массиве равен 1.
 
-    function gimme (triplet) {
-    let max = Math.max(...triplet);
-    let min = Math.min(...triplet);
-    let resultAverage = 0
-    for (let average of triplet){
-        if(average < max && average > min){
-            resultAverage = average;
+    function gimme(triplet) {
+        let max = Math.max(...triplet);
+        let min = Math.min(...triplet);
+        let resultAverage = 0
+        for (let average of triplet) {
+            if (average < max && average > min) {
+                resultAverage = average;
+            }
         }
-    }
-    return triplet.indexOf(resultAverage);
+        return triplet.indexOf(resultAverage);
     }
 
 
@@ -2811,14 +2812,14 @@ export function setupCounter(element) {
 //     "Nananananananananananananananana Batman!" --> "####################################man!"
 
     function maskify(cc) {
-    if(cc <= 4) return cc
+        if (cc <= 4) return cc
         let ccSlc = cc.slice(-4)
-        let resSlc = cc.slice(0,-4)
+        let resSlc = cc.slice(0, -4)
         let res = ''
-       for(let latties of resSlc){
-          res += latties.replace(/./g, '#')
-       }
-       return res+ccSlc
+        for (let latties of resSlc) {
+            res += latties.replace(/./g, '#')
+        }
+        return res + ccSlc
     }
 
     //Задача 138
@@ -2829,7 +2830,7 @@ export function setupCounter(element) {
     // args_count('a', 'b') --> 2
 
     const args_count = (...arg) => {
-    return arg.length;
+        return arg.length;
     }
 
 
@@ -2844,9 +2845,9 @@ export function setupCounter(element) {
 
     function min(arr, toReturn) {
         let minCount = Math.min.apply(null, arr)
-        if(toReturn === 'value'){
+        if (toReturn === 'value') {
             return minCount
-        }else{
+        } else {
             return arr.indexOf(minCount)
         }
     }
@@ -2857,13 +2858,13 @@ export function setupCounter(element) {
     //     Дан отсортированный массив различных целых чисел. Напишите метод для поиска магического индекса (если он существует) в массиве A.
     // findMagic([-20,-10,2,10,20]); // Возвращает 2
 
-    function findMagic(arr){
-    for(let i = 0; i < arr.length; i++){
-        if(arr[i] === i){
-            return arr[i]
+    function findMagic(arr) {
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] === i) {
+                return arr[i]
+            }
         }
-    }
-    return -1
+        return -1
     }
 
     //Задача 141
@@ -2886,10 +2887,8 @@ export function setupCounter(element) {
 // Порядок элементов лица (глазы, нос, рот) всегда будет одинаковым.
 
     function countSmileys(arr) {
-     return arr.filter(face => /^[:;][-~]?[)D]$/.test(face)).length;
+        return arr.filter(face => /^[:;][-~]?[)D]$/.test(face)).length;
     }
-
-
 
 
     //Задача 142
@@ -2912,8 +2911,7 @@ export function setupCounter(element) {
                     result.push('-');
                 }
                 result.push(letter.toLowerCase());
-            }
-            else if (letter === letter.toLowerCase() && letter !== letter.toUpperCase()) {
+            } else if (letter === letter.toLowerCase() && letter !== letter.toUpperCase()) {
                 result.push(letter);
             }
         }
@@ -2927,19 +2925,19 @@ export function setupCounter(element) {
     //     Значения должны сохранять свой исходный тип.
     //     Обратите внимание, что числа, записанные как строки, являются строками и должны сортироваться вместе с другими строками.
 
-    function dbSort(a){
+    function dbSort(a) {
         let num = []
         let string = []
 
-        for(let sort of a){
-            if(typeof sort === 'number'){
+        for (let sort of a) {
+            if (typeof sort === 'number') {
                 num.push(sort)
             } else {
                 string.push(sort)
             }
         }
 
-        return num.sort((a,b) => a - b).concat(string.sort());
+        return num.sort((a, b) => a - b).concat(string.sort());
     }
 
     //Задача 144
@@ -2960,25 +2958,25 @@ export function setupCounter(element) {
     // Пластик = 3, Стекло = 3, Картон = 1
     // Вывод: [3, 3, 1]
 
-    function recycleMe(recycle){
-        let result = [0,0,0]
-        for(let num of recycle){
-            if(num > 0){
-            result[0]++
-            }else if(num < 0){
+    function recycleMe(recycle) {
+        let result = [0, 0, 0]
+        for (let num of recycle) {
+            if (num > 0) {
+                result[0]++
+            } else if (num < 0) {
                 result[1]++
-            }else {
+            } else {
                 result[2]++
             }
         }
         return result
     }
 
-    function recycleMe2(recycle){
-    let glass = recycle.filter(x => x < 0).length
-    let plastic = recycle.filter(x => x > 0).length
-    let card = recycle.filter(x => x === 0).length
-        return [plastic,glass,card]
+    function recycleMe2(recycle) {
+        let glass = recycle.filter(x => x < 0).length
+        let plastic = recycle.filter(x => x > 0).length
+        let card = recycle.filter(x => x === 0).length
+        return [plastic, glass, card]
     }
 
     //Задача 146
@@ -2997,10 +2995,10 @@ export function setupCounter(element) {
     // специальными символами ~#$%^&!@*():;"'.,? в сохранённом виде.
 
     function rentalCarCost(d) {
-        const number = ['1','2','3','4','5','6','7','8','9','0']
+        const number = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
         let result = []
-        for(let string of d){
-            if(!number.includes(string)){
+        for (let string of d) {
+            if (!number.includes(string)) {
                 result.push(string)
             }
         }
@@ -3023,20 +3021,20 @@ export function setupCounter(element) {
     //     Например, если N = 2, а исходный список — [1,2,3,1,2,1,2,3], вы берёте [1,2,3,1,2], пропускаете следующие [1,2], так как это привело бы к трём повторениям 1 и 2, а затем берёте 3, что даёт результат [1,2,3,1,2,3].
     //     Для списка [20,37,20,21] и N = 1 результатом будет [20,37,21].
 
-    function deleteNth(arr,n){
-     let counts = {}
-     let result = []
-        for(let item of arr){
-          counts[item] = counts[item] || 0;
+    function deleteNth(arr, n) {
+        let counts = {}
+        let result = []
+        for (let item of arr) {
+            counts[item] = counts[item] || 0;
 
-          if(counts[item] < n){
-              result.push(item)
-              counts[item] += 1
-          }
+            if (counts[item] < n) {
+                result.push(item)
+                counts[item] += 1
+            }
 
         }
 
-return result
+        return result
     }
 
 
@@ -3048,10 +3046,10 @@ return result
     //     Написать функцию с именем checkCoupon, которая проверяет, что код купона действителен и не истёк.
     //     Купон недействителен на следующий день после даты истечения срока. Все даты передаются в виде строк в формате: "MONTH DATE, YEAR" (например, "Июль 9, 2015").
 
-    function checkCoupon(enteredCode, correctCode, currentDate, expirationDate){
-    if(enteredCode !== correctCode) return false
-    const curDate = new Date(currentDate)
-    const expDate = new Date(expirationDate)
+    function checkCoupon(enteredCode, correctCode, currentDate, expirationDate) {
+        if (enteredCode !== correctCode) return false
+        const curDate = new Date(currentDate)
+        const expDate = new Date(expirationDate)
         return curDate < expDate
 
     }
@@ -3066,11 +3064,9 @@ return result
     // Удачи!
 
     function doubleChar(str) {
-       return  str.split('').map(t=> t +t).join('')
+        return str.split('').map(t => t + t).join('')
 
     }
-
-
 
 
     //Задача 150
@@ -3079,15 +3075,15 @@ return result
     // 'acb' --> 'bca'
     // 'aabacbaa' --> 'bbabcabb'
 
-    function switcheroo(x){
-    const letters = x.split('')
+    function switcheroo(x) {
+        const letters = x.split('')
         let result = []
-        for(let letter of letters){
-            if(letter === 'a'){
+        for (let letter of letters) {
+            if (letter === 'a') {
                 result.push('b')
-            }else if(letter === 'b'){
+            } else if (letter === 'b') {
                 result.push('a')
-            }else {
+            } else {
                 result.push(letter)
             }
         }
@@ -3108,14 +3104,14 @@ return result
     // вход  = [[18, 20], [45, 2], [61, 12], [37, 6], [21, 21], [78, 9]]
     // выход = ["Open", "Open", "Senior", "Open", "Open", "Senior"]
 
-    function openOrSenior(data){
-      let result = []
-        for(let resData of data ){
-           if(resData[0] >= 55 && resData[1] > 7){
-               result.push('Senior')
-           }else {
-               result.push('Open')
-           }
+    function openOrSenior(data) {
+        let result = []
+        for (let resData of data) {
+            if (resData[0] >= 55 && resData[1] > 7) {
+                result.push('Senior')
+            } else {
+                result.push('Open')
+            }
 
         }
         return result
@@ -3133,8 +3129,8 @@ return result
         const num1Arr = String(num1).split('')
         const num2Arr = String(num2).split('')
 
-        for(let i = 0; i<num1Arr.length; i++){
-        result.push(+num1Arr[i] + +num2Arr[i])
+        for (let i = 0; i < num1Arr.length; i++) {
+            result.push(+num1Arr[i] + +num2Arr[i])
         }
 
         return Number(result.join(''))
@@ -3150,11 +3146,11 @@ return result
     // Завершите функцию, которая принимает существительное в виде строки и возвращает предпочтительное название группы в виде строки.
 
     function bandNameGenerator(str) {
-    const strArr = str.split('')
+        const strArr = str.split('')
 
-        if(strArr[0] === strArr[strArr.length-1]){
+        if (strArr[0] === strArr[strArr.length - 1]) {
             return str.charAt(0).toUpperCase() + str.slice(1) + str.slice(1)
-        }else {
+        } else {
             return `The ${str.charAt(0).toUpperCase() + str.slice(1)}`
         }
     }
@@ -3168,13 +3164,13 @@ return result
     //     Уровень удовлетворённости рассчитывается как общий балл / количество людей в комнате.
     //     Учтите, что ваш босс тоже в комнате (ключ 'boss'). Его оценка учитывается в двойном размере (но при этом он всё равно считается за одного человека!).
 
-    function outed(meet, boss){
+    function outed(meet, boss) {
         let result = 0
         let resultBoss
-        for(let pep in meet){
-            if(pep === boss){
+        for (let pep in meet) {
+            if (pep === boss) {
                 resultBoss = meet[pep] * 2
-            }else {
+            } else {
                 result += meet[pep]
             }
 
@@ -3199,31 +3195,59 @@ return result
     //     В тестах JavaScript/CoffeeScript будет передаваться undefined, если этот аргумент не используется.
 
     function titleCase(title, minorWords) {
-        if(!title) return ''
+        if (!title) return ''
         const arrTitle = title.toLowerCase().split(' ')
 
         let result = []
-    if(minorWords === undefined){
-        for(let word of arrTitle){
-           result.push( word[0].toUpperCase() + word.slice(1) )
-        }
-    }else {
-        const minorWordsSet = new Set(minorWords.toLowerCase().split(' '))
-        for(let i = 0; i < arrTitle.length; i++){
-           const word = arrTitle[i]
-            if(i === 0){
-                result.push( word[0].toUpperCase() + word.slice(1) )
-        }else if(minorWordsSet.has(word)){
-            result.push(word)
-
-            }else {
+        if (minorWords === undefined) {
+            for (let word of arrTitle) {
                 result.push(word[0].toUpperCase() + word.slice(1))
             }
+        } else {
+            const minorWordsSet = new Set(minorWords.toLowerCase().split(' '))
+            for (let i = 0; i < arrTitle.length; i++) {
+                const word = arrTitle[i]
+                if (i === 0) {
+                    result.push(word[0].toUpperCase() + word.slice(1))
+                } else if (minorWordsSet.has(word)) {
+                    result.push(word)
+
+                } else {
+                    result.push(word[0].toUpperCase() + word.slice(1))
+                }
+            }
         }
+        return result.join(' ')
     }
-    return result.join(' ')
+
+    //Задача 156
+    // Обмен массивами и разворот
+    // Настало время для обмена массивами! Цель проста: обменять элементы двух массивов на месте (in-place) так,
+    //     чтобы их новое содержимое также было развёрнуто. Массивы могут быть разной длины, и в этом случае вам нужно будет увеличить более короткий массив на месте.
+    //     до
+    // my_array = ['a', 'b', 'c']
+    // other_array = [1, 2, 3]
+    // exchange_arrays(my_array, other_array)
+    // после
+    // my_array == [3, 2, 1]
+    // other_array == ['c', 'b', 'a']
+
+    function exchangeWith(a, b) {
+
+        a.reverse()
+        b.reverse()
+
+        const temp = [...a]
+
+        a.length = 0
+        a.push(...b)
+
+        b.length = 0
+        b.push(...temp)
+
     }
 
 
-    console.log(titleCase('THE WIND IN THE WILLOWS', 'The In'))
+        console.log(exchangeWith(['a', 'b', 'c'], [1, 2, 3]))
+
 }
