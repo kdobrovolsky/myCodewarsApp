@@ -3504,8 +3504,32 @@ export function setupCounter(element) {
         const secs = seconds % 60;
         const pad = (num) => num.toString().padStart(2, '0');
         return `${pad(hours)}:${pad(minutes)}:${pad(secs)}`;
+
     }
 
-    console.log(humanReadable(59))
+    //Задача 169
+    // Напишите функцию, которая проверит, находятся ли два заданных символа в одном и том же регистре.
+    //     Если любой из символов не является буквой, верните -1
+    // Если оба символа находятся в одном регистре, верните 1
+    // Если оба символа являются буквами, но не в одном регистре, верните 0
+    // Примеры:
+    //     'a' и 'g' возвращают 1
+    // 'A' и 'C' возвращают 1
+    // 'b' и 'G' возвращают 0
+    // 'B' и 'g' возвращают 0
+    // '0' и '?' возвращают -1
+
+    function sameCase(a, b){
+        if(/[^a-zA-Z]/.test(a) || /[^a-zA-Z]/.test(b)) return -1
+    if( a === a.toLowerCase() && b === b.toLowerCase()){
+        return 1
+    }else if( a === a.toUpperCase() && b === b.toUpperCase()){
+        return 1
+    }else{
+        return 0
+    }
+    }
+
+    console.log(sameCase('H', ' '))
 
 }
