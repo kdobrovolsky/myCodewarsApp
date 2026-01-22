@@ -3464,7 +3464,48 @@ export function setupCounter(element) {
     return code.split('').sort((a, b) => b - a).join('');
     }
 
+    //Задача 167
+    // Переместите первую букву каждого слова в конец, затем добавьте "ay" в конец слова. Знаки препинания оставляйте без изменений.
+    //     Примеры:
+    // pigIt('Pig latin is cool'); // igPay atinlay siay oolcay
+    // pigIt('Hello world !'); // elloHay orldway !
 
-    console.log(sortGiftCode('pqksuvy'))
+    function pigIt(str){
+        const strArr = str.split(' ');
+        let result = []
+        for(let letter of strArr){
+
+            if(/[!?.,]/.test(letter)){
+                result.push(letter)
+                continue
+            }
+
+            let firstLetter = letter[0];
+            let restOfWord = letter.slice(1);
+            let pigLatin = restOfWord + firstLetter + "ay";
+        result.push(pigLatin);
+        }
+        return result.join(' ')
+    }
+
+    //Задача 168
+    // Напишите функцию, которая принимает неотрицательное целое число (секунды) в качестве входных данных и возвращает время в удобочитаемом формате (ЧЧ:ММ:СС)
+    //
+    // ЧЧ = часы, дополненные до 2 цифр, диапазон: 00 - 99
+    // ММ = минуты, дополненные до 2 цифр, диапазон: 00 - 59
+    // СС = секунды, дополненные до 2 цифр, диапазон: 00 - 59
+    // Максимальное время никогда не превышает 359999 (99:59:59)
+    //
+    // Вы можете найти примеры в тестовых данных.
+
+    function humanReadable (seconds) {
+        const hours = Math.floor(seconds / 3600);
+        const minutes = Math.floor((seconds % 3600) / 60);
+        const secs = seconds % 60;
+        const pad = (num) => num.toString().padStart(2, '0');
+        return `${pad(hours)}:${pad(minutes)}:${pad(secs)}`;
+    }
+
+    console.log(humanReadable(59))
 
 }
