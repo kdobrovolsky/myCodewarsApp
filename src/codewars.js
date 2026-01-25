@@ -3346,7 +3346,7 @@ export function setupCounter(element) {
     const countRedBeads = (n) => n<2 ? 0 :(n-1) *2
 
     
-    
+
     //Задача 162
     // Дан массив, содержащий как числа, так и строковые представления целых чисел. Сложите все числа (нестроковые целые) и вычтите сумму целых чисел, представленных строками.
     //     Верните результат в виде числа.
@@ -3568,6 +3568,35 @@ export function setupCounter(element) {
       return result.join('')
     }
 
-   console.log('hello case'.camelCase())
+    //Задача 172
+    // Даны два массива строк. Верните количество раз, которое каждая строка из второго массива встречается в первом массиве.
+    //     Пример
+    // array1 = ['abc', 'abc', 'xyz', 'cde', 'uvw']
+    // array2 = ['abc', 'cde', 'uap']
+    // Сколько раз элементы из array2 встречаются в array1?
+    //     'abc' встречается дважды в первом массиве (2)
+    // 'cde' встречается один раз (1)
+    // 'uap' не встречается в первом массиве (0)
+    // Таким образом, solve(array1, array2) = [2, 1, 0]
+
+    function solve(a,b){
+     let result = []
+
+        for(let word of b){
+            let count = 0
+            for(let word2 of a){
+            if(word === word2){
+                count++
+            }
+            }
+            result.push(count)
+        }
+        return result
+    }
+
+    const array1 = ['abc', 'abc', 'xyz', 'cde', 'uvw']
+    const array2 = ['abc', 'cde', 'uap']
+
+   console.log(solve(array1,array2))
 
 }
